@@ -49,4 +49,11 @@ public class Academia {
 	public void setCursos(HashSet<Curso> cursos) {
 		this.cursos = cursos;
 	}
+
+
+
+
+	public Boolean IngrasarCursoEnLaAcademia(Curso nombreDelCurso) {
+		return cursos.add(nombreDelCurso);
+	}
 }
