@@ -64,7 +64,7 @@ public class Academia {
 
 	public Boolean registrarInstructorEnAcademia(Instructor nuevoInstructor) {
 		boolean seRegistro= instructores.add(nuevoInstructor);
-		System.out.println(instructores.size());
+	//	System.out.println(instructores.size());
 		return seRegistro;
 	}
 
