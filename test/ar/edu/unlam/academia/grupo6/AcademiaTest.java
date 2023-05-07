@@ -4,8 +4,25 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class CursoTest {
+//PREPARACION 	
+//ACCION
+//VALIDACION
 
+public class AcademiaTest {
+
+	@Test
+	public void queSePuedaCrearUnaAcademia() {
+				
+		//PREPARACION 
+		String nombreDeLaAcademia = "Don Rip-Rip";
+				
+		//ACCION
+		Academia DonRipRip = new Academia(nombreDeLaAcademia);
+				
+		//VALIDACION
+		assertNotNull (DonRipRip);
+	}
+	
 	@Test
 	public void queSePuedaCrearUnCurso() {
 		//PREPARACION 
@@ -26,7 +43,7 @@ public class CursoTest {
 	}
 	
 	@Test
-	public void queSePuedaIngresarUnCurso() {
+	public void queSePuedaIngresarUnCursoEnLaAcademia() {
 		//PREPARACION 
 		
 		
