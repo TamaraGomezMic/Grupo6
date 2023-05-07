@@ -1,11 +1,12 @@
 package ar.edu.unlam.academia.grupo6;
 
+import java.util.Objects;
+
 public abstract class Persona {
 
 	
 	//ATRIBUTOS
 	private Long dni;
-	private Integer codigo;
 	private String nombre;
 	private Long celular;
 	private String email;
@@ -14,13 +15,18 @@ public abstract class Persona {
 	
 	
 	//CONSTRUCTOR
-	public Persona(Long dni, Integer codigo, String nombre, Long celular, String email, String direccion) {
+	public Persona(Long dni, String nombre, Long celular, String email, String direccion) {
 		this.dni=dni;
-		this.codigo=codigo;
 		this.nombre=nombre;
 		this.celular=celular;
 		this.direccion=direccion;
 		this.email=email;
+	}
+
+
+
+	public Persona() {
+		// TODO Auto-generated constructor stub
 	}
 
 
@@ -36,18 +42,7 @@ public abstract class Persona {
 	}
 
 
-
-	public Integer getCodigo() {
-		return codigo;
-	}
-
-
-
-	public void setCodigo(Integer codigo) {
-		this.codigo = codigo;
-	}
-
-
+	
 
 	public String getNombre() {
 		return nombre;
@@ -94,6 +89,28 @@ public abstract class Persona {
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
+
+
+	// selecciono por que parametro vav a comparar (dni)
+	@Override
+	public int hashCode() {
+		return Objects.hash(dni);
+	}
+
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Persona other = (Persona) obj;
+		return Objects.equals(dni, other.dni);
+	}
+	
 	
 	//METODO
 }
