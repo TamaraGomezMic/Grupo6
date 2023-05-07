@@ -146,24 +146,30 @@ public class AcademiaTest {
 	
 	@Test
 	public void queSePuedaIngresarUnAlumnoALaAcademia() {
-				
-		//PREPARACION 
-		Long dni =37246801L;
-		Integer codigo=1;
-		String nombre ="lucas Barrios";
-		Long celular = 1123451234L;
-		String email="lucasbarrios@alumno.edu.ar";
-		String direccion ="calle falsa123";
-		Double sueldo=2400.00;
-		String turno="mañana";
-	
 		
-				
-		//ACCION		
-		Instructor nuevoInstructor = new Instructor(dni,codigo,nombre,celular,email,direccion,sueldo,turno);
-				
-		//VALIDACION
-		assertNotNull (nuevoInstructor);
+//PREPARACION 
+		Long dni =32432443L;
+		String nombre ="Menganito Ramirez";
+		Long celular = 1124356456L;
+		String email="menganoagarramedelamano@alumno.edu.ar";
+		String direccion ="calle walaby 2467 ";
+		Integer id= 1;
+//un mes debe durar como minimo
+		LocalDate fechaDelInscripcion= LocalDate.of(2023, 01, 03);
+		LocalDate fechaDelFinalizacion= LocalDate.of(2023, 02, 03);
+		String nombreDeLaAcademia = "Don Rip-Rip";
+
+
+
+		
+//ACCION		
+		Alumno nuevoAlumno =new Alumno(dni, nombre, celular, email, direccion,id,fechaDelInscripcion,fechaDelFinalizacion);
+		Academia DonRipRip = new Academia(nombreDeLaAcademia);	
+		Boolean sePudoIngresar=DonRipRip.ingresarAlumnoALaAcademia(nuevoAlumno);
+		
+//VALIDACION
+		assertTrue(sePudoIngresar);
+
 	}
 	
 	

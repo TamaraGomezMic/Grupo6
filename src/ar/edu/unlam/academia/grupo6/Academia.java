@@ -11,6 +11,7 @@ public class Academia {
 	private String nombreDeLaAcademia;
 	private HashSet<Curso>cursos;
 	private HashSet<Instructor>instructores;
+	private HashSet<Alumno>alumnos;
 	
 	
 
@@ -20,6 +21,7 @@ public class Academia {
 		this.nombreDeLaAcademia = nombreDeLaAcademia;
 		cursos = new HashSet<>();
 		instructores = new HashSet<>();
+		alumnos =new HashSet<>();
 		
 	}
 	//METODO
@@ -66,6 +68,15 @@ public class Academia {
 		boolean seRegistro= instructores.add(nuevoInstructor);
 	//	System.out.println(instructores.size());
 		return seRegistro;
+	}
+
+
+
+
+	public Boolean ingresarAlumnoALaAcademia(Alumno nuevoAlumno) {
+		boolean seRegistro= alumnos.add(nuevoAlumno);
+
+			return seRegistro;
 	}
 
 }
