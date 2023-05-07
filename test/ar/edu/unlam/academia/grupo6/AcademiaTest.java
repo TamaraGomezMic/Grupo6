@@ -10,6 +10,10 @@ import org.junit.Test;
 
 public class AcademiaTest {
 
+	
+	// ACADEMIA +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	
+	
 	@Test
 	public void queSePuedaCrearUnaAcademia() {
 				
@@ -65,6 +69,53 @@ public class AcademiaTest {
 						
 		
 	}
+	
+	// INSTRUCTOR ++++++++++++++++++++++++++++++++++++++++++++++++++
+	
+	
+	
+	@Test
+	public void queSePuedaCrearUnaPersonaInstructor() {
+				
+		//PREPARACION 
+		Long dni =37246801L;
+		Integer codigo=1;
+		String nombre ="lucas Barrios";
+		Long celular = 1123451234L;
+		String email="lucasbarrios@alumno.edu.ar";
+		String direccion ="calle falsa123";
+		Double sueldo=2400.00;
+		String turno="mañana";
+		
+		
+				
+		//ACCION
+		Persona nuevaPersona= new Persona (dni,codigo,nombre,celular,email,direccion);
+		Instructor nuevoInstructor = new Instructor(nuevaPersona,sueldo,turno);
+				
+		//VALIDACION
+		assertNotNull (nuevaPersona);
+	}
+	
+	@Test
+	public void queSePuedaCrearUnInstructor() {
+		//PREPARACION 
+		Integer codigoCurso = 1;
+		String tipoDeCurso = "Curso de manejo inicial"; 
+		Integer duracionCurso = 10;
+		Double valorCuota = 25000.00;
+		Double valorClaseExtra = 1000.00;
+		
+		
+		//ACCION
+		Curso nombreDelCurso = new Curso(codigoCurso, tipoDeCurso, duracionCurso, valorCuota, valorClaseExtra);
+		
+		
+		//VALIDACION
+		assertNotNull (nombreDelCurso); 
+		
+	}
+	
 	
 	
 }
