@@ -21,4 +21,32 @@ public class Academia {
 		
 	}
 	//METODO
+
+
+
+
+	public String getNombreDeLaAcademia() {
+		return nombreDeLaAcademia;
+	}
+
+
+
+
+	public void setNombreDeLaAcademia(String nombreDeLaAcademia) {
+		this.nombreDeLaAcademia = nombreDeLaAcademia;
+	}
+
+
+
+
+	public HashSet<Curso> getCursos() {
+		return cursos;
+	}
+
+
+
+
+	public void setCursos(HashSet<Curso> cursos) {
+		this.cursos = cursos;
+	}
 }
