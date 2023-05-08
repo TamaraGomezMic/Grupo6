@@ -72,6 +72,36 @@ public class AcademiaTest {
 		
 	}
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	// INSTRUCTOR ++++++++++++++++++++++++++++++++++++++++++++++++++
 	
 	
@@ -88,11 +118,12 @@ public class AcademiaTest {
 		String direccion ="calle falsa123";
 		Double sueldo=2400.00;
 		String turno="mañana";
+		String legajo="433FF3";
 	
 		
 				
 		//ACCION		
-		Instructor nuevoInstructor = new Instructor(dni,codigo,nombre,celular,email,direccion,sueldo,turno);
+		Instructor nuevoInstructor = new Instructor(legajo,dni,nombre,celular,email,direccion,sueldo,turno);
 				
 		//VALIDACION
 		assertNotNull (nuevoInstructor);
@@ -103,7 +134,7 @@ public class AcademiaTest {
 				
 		//PREPARACION 
 		Long dni =37246801L;
-		Integer codigo=4;
+		String legajo="433FF3";
 		String nombre ="lucas Barrios";
 		Long celular = 1123451234L;
 		String email="lucasbarrios@alumno.edu.ar";
@@ -115,12 +146,36 @@ public class AcademiaTest {
 		
 		//ACCION
 		Academia DonRipRip = new Academia(nombreDeLaAcademia);
-		Instructor nuevoInstructor = new Instructor(dni,codigo,nombre,celular,email,direccion,sueldo,turno);
+		Instructor nuevoInstructor = new Instructor(legajo,dni,nombre,celular,email,direccion,sueldo,turno);
 		Boolean SePudoRegistrar = DonRipRip.registrarInstructorEnAcademia(nuevoInstructor);
 				
 		//VALIDACION
 		assertTrue (SePudoRegistrar);
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	// ALUMNO +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	
 	
 	@Test
 	public void queSePuedaCrearUnAlumno() {
@@ -135,13 +190,15 @@ public class AcademiaTest {
 		//un mes debe durar como minimo
 		LocalDate fechaDelInscripcion= LocalDate.of(2023, 01, 03);
 		LocalDate fechaDelFinalizacion= LocalDate.of(2023, 02, 03);
-		
+		String estado="activo";
+		String legajo="433FF3";
 				
 		//ACCION		
-		Alumno nuevoAlumno =new Alumno(dni, nombre, celular, email, direccion,id,fechaDelInscripcion,fechaDelFinalizacion);
+		Alumno nuevoAlumno =new Alumno(legajo, dni, nombre, celular, email, direccion,fechaDelInscripcion,fechaDelFinalizacion,estado);
 				
 		//VALIDACION
 		assertNotNull (nuevoAlumno);
+		
 	}
 	
 	@Test
@@ -157,13 +214,14 @@ public class AcademiaTest {
 //un mes debe durar como minimo
 		LocalDate fechaDelInscripcion= LocalDate.of(2023, 01, 03);
 		LocalDate fechaDelFinalizacion= LocalDate.of(2023, 02, 03);
+		String estado="activo";
 		String nombreDeLaAcademia = "Don Rip-Rip";
-
-
-
+		String legajo="433FF3";
 		
+
+	
 //ACCION		
-		Alumno nuevoAlumno =new Alumno(dni, nombre, celular, email, direccion,id,fechaDelInscripcion,fechaDelFinalizacion);
+		Alumno nuevoAlumno =new Alumno(legajo,dni, nombre, celular, email, direccion,fechaDelInscripcion,fechaDelFinalizacion,estado);
 		Academia DonRipRip = new Academia(nombreDeLaAcademia);	
 		Boolean sePudoIngresar=DonRipRip.ingresarAlumnoALaAcademia(nuevoAlumno);
 		

@@ -4,18 +4,20 @@ import java.time.LocalDate;
 
 public class Alumno extends Persona{
 //atributo
-	private Integer id;
+
 	private LocalDate fechaDelInscripcion;
 	private LocalDate fechaDelFinalizacion;
+	private String estado;
 
 	
 //cinstructor
-	public Alumno(Long dni, String nombre, Long celular, String email, String direccion, Integer id,
-	LocalDate fechaDelInscripcion, LocalDate fechaDelFinalizacion) {
-	super(dni, nombre,celular, email, direccion);
+	public Alumno(String legajo, Long dni, String nombre, Long celular, String email, String direccion, 
+	LocalDate fechaDelInscripcion, LocalDate fechaDelFinalizacion, String estado) {
+	super(legajo,dni, nombre,celular, email, direccion);
 	this.fechaDelFinalizacion=fechaDelFinalizacion;
 	this.fechaDelInscripcion=fechaDelInscripcion;
-	this.id=id;
+
+	this.estado=estado;
 	
 		
 	}
@@ -29,15 +31,6 @@ public class Alumno extends Persona{
 
 //metodos
 
-	public Integer getId() {
-		return id;
-		
-	}
-
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
 
 
 	public LocalDate getFechaDelInscripcion() {
@@ -57,5 +50,15 @@ public class Alumno extends Persona{
 
 	public void setFechaDelFinalizacion(LocalDate fechaDelFinalizacion) {
 		this.fechaDelFinalizacion = fechaDelFinalizacion;
+	}
+
+
+	public String getEstado() {
+		return estado;
+	}
+
+
+	public void setEstado(String estado) {
+		this.estado = estado;
 	}
 }
