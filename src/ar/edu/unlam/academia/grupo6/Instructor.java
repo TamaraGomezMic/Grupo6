@@ -32,15 +32,6 @@ public class Instructor extends Persona {
 	
 
 
-	public Integer getLegajo() {
-		return legajo;
-	}
-
-	public void setLegajo(Integer legajo) {
-		this.legajo = legajo;
-	}
-
-
 
 
 
