@@ -11,16 +11,18 @@ public abstract class Persona {
 	private Long celular;
 	private String email;
 	private String direccion;
+	private String legajo;
 	
 	
 	
 	//CONSTRUCTOR
-	public Persona(Long dni, String nombre, Long celular, String email, String direccion) {
+	public Persona(String legajo, Long dni, String nombre, Long celular, String email, String direccion) {
 		this.dni=dni;
 		this.nombre=nombre;
 		this.celular=celular;
 		this.direccion=direccion;
 		this.email=email;
+		this.legajo=legajo;
 	}
 
 
@@ -91,10 +93,22 @@ public abstract class Persona {
 	}
 
 
+	public String getLegajo() {
+		return legajo;
+	}
+
+
+
+	public void setLegajo(String legajo) {
+		this.legajo = legajo;
+	}
+
+
+
 	// selecciono por que parametro vav a comparar (dni)
 	@Override
 	public int hashCode() {
-		return Objects.hash(dni);
+		return Objects.hash(legajo);
 	}
 
 
