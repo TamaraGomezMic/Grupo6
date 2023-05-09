@@ -79,5 +79,36 @@ public class Academia {
 			return seRegistro;
 	}
 
+
+
+
+	public Boolean agregarUnaClaseExtraAUnCursoAUnaAcademia(Integer agregarClaseExtra,Integer codigoDelCurso) {
+		Boolean sePudo=false ;
+		for(Curso curso: cursos) {
+			if(curso.getCodigoCurso().equals(codigoDelCurso)) {
+			curso.adicionarClaseExtra(agregarClaseExtra);
+			sePudo=true;
+			
+			}
+			
+		}
+		return sePudo;
+	}
+
+
+
+
+	public Integer mostrarLaCantidadDeHorasDelCursoActualizado(Integer agregarClaseExtra, Integer codigoCurso) {
+	Integer respuesta=0;
+		for(Curso curso: cursos) {
+			if(curso.getCodigoCurso().equals(codigoCurso)) {
+			respuesta=curso.getDuracionCurso();
+					
+			}
+			
+		}
+		return respuesta;
+	}
+
 }
 

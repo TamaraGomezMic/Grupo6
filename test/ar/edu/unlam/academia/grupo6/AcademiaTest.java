@@ -70,7 +70,7 @@ public class AcademiaTest {
 		
 	}
 	@Test
-	public void queSePuedanAgregarClasesExtraAUnCurso() {
+	public void queSePuedanAgregarClasesExtra() {
 		//PREPARACION 
 		Integer codigoCurso = 1;
 		String tipoDeCurso = "Curso de manejo inicial"; 
@@ -91,6 +91,33 @@ public class AcademiaTest {
 		assertTrue (sePudo);
 		assertNotNull (manejoInicial); 
 		assertEquals(agregarClaseExtra,cantidadDeClasesExtra);
+	
+	}
+	@Test
+	public void queSePuedanAgregarClasesExtraAUnCursoEnLaAcademia() {
+		//PREPARACION 
+		Integer codigoCurso = 1;
+		String tipoDeCurso = "Curso de manejo inicial"; 
+		Integer duracionCurso = 10;
+		Double valorCuota = 25000.00;
+		String nombreDeLaAcademia = "Don Rip-Rip";
+		Integer cantidadDeClasesExtra=1;
+		Integer cantidadDeClasesTotalesEsperadas=11;
+		
+		//ACCION
+		Curso manejoInicial = new Curso(codigoCurso, tipoDeCurso, duracionCurso, valorCuota);
+		Academia DonRipRip = new Academia(nombreDeLaAcademia);
+		Boolean sePudo = DonRipRip.IngrasarCursoEnLaAcademia(manejoInicial);
+		Integer agregarClaseExtra =manejoInicial.queSePuedaAgregarUnaClaseExtraAlCurso(cantidadDeClasesExtra);
+		Boolean agregarClaseExtraAlCurso=DonRipRip.agregarUnaClaseExtraAUnCursoAUnaAcademia(agregarClaseExtra,codigoCurso);
+		Integer cantidadDeClasesTotales=DonRipRip.mostrarLaCantidadDeHorasDelCursoActualizado(agregarClaseExtra,codigoCurso);
+		//VALIDACION
+		System.out.println(cantidadDeClasesTotales);
+		assertTrue (sePudo);
+		assertNotNull (manejoInicial); 
+		assertEquals(agregarClaseExtra,cantidadDeClasesExtra);
+		assertTrue(agregarClaseExtraAlCurso);
+		assertEquals(cantidadDeClasesTotalesEsperadas,cantidadDeClasesTotales);
 	
 	}
 	

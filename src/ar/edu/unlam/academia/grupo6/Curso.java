@@ -11,13 +11,13 @@ public class Curso {
 	private Integer duracionCurso;
 	private Double valorCuota;
 	private final Double VALOR_CLASE_EXTRA=1000.0;
-	private Integer claseExtra;
+	private Integer claseExtra=0;
 	//CONSTRUCTORES
 	public Curso(Integer codigoCurso, String tipoDeCurso, Integer duracionCurso,
 			Double valorCuota) {
 		
 		this.codigoCurso = codigoCurso;
-		this.duracionCurso = codigoCurso;
+		this.duracionCurso = duracionCurso;
 		this.tipoDeCurso = tipoDeCurso;
 		this.valorCuota = valorCuota;
 	
@@ -91,10 +91,10 @@ public class Curso {
 //ver q pasa si las clases ya empiezan con clase extra cero==>
 	public Integer getClaseExtra() {
 		return claseExtra;
+		//puse el cero arriba en el atributo 
 	}
 
 	public void setClaseExtra(Integer cantidadDeClasesExtra) {
-		this.claseExtra=0; 
 		this.claseExtra = cantidadDeClasesExtra;
 	}
 	
@@ -105,11 +105,18 @@ public class Curso {
 		 	    
 		    this.setClaseExtra(cantidadDeClasesExtra);
 		    respuesta=this.getClaseExtra();
-		    System.out.println(this.getClaseExtra());
+		  // System.out.println(this.getClaseExtra());
 		    
 		 
 		return respuesta;
 
+	}
+	public void adicionarClaseExtra(Integer agregarClaseExtra) {
+
+		Integer totalHoras=this.getDuracionCurso()+agregarClaseExtra;
+         this.setDuracionCurso(totalHoras);	
+
+		
 	}
 
 
