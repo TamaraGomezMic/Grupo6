@@ -210,5 +210,20 @@ public class Academia {
 		return null;
 	}
 
+
+
+
+	public Integer obtenerCantidadDeAlumnosActivos() {
+		Integer contador=0;
+
+		for(Alumno alumno:alumnos) {
+			if(alumno.getEstado()=="activo") {
+			contador+=1;
+			}
+			
+		}
+		return contador;
+	}
+
 }
 

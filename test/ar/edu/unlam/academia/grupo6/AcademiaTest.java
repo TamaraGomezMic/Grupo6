@@ -230,7 +230,7 @@ public class AcademiaTest {
 		Instructor nuevoInstructor = new Instructor(legajo,dni,nombre,celular,email,direccion,sueldo,turno);
 		Boolean SePudoRegistrar = DonRipRip.registrarInstructorEnAcademia(nuevoInstructor);
 		Instructor seAumentoElSueldo = DonRipRip.aumentarElSueldoDeUnInstructor(AumentoDelSueldo,legajo);
-		System.out.println(seAumentoElSueldo.getSueldo());		
+		//System.out.println(seAumentoElSueldo.getSueldo());		
 		//VALIDACION
 		assertTrue (SePudoRegistrar);
 		assertEquals (sueldoEsperado, seAumentoElSueldo.getSueldo());
@@ -489,7 +489,7 @@ public class AcademiaTest {
 		String direccionDeTres ="calle walaby 2467 ";
 		LocalDate fechaDelInscripcionDeTres= LocalDate.of(2023, 01, 03);
 		LocalDate fechaDelFinalizacionDeTres= LocalDate.of(2023, 02, 03);
-		String estadoDeTres="activo";
+		String estadoDeTres="inactivo";
 		String legajoTres="477FF3";
 		//alumno 3
 		Long dniDeCuatro =32432443L;
@@ -499,27 +499,33 @@ public class AcademiaTest {
 		String direccionDeCuatro ="calle baches 267 ";
 		LocalDate fechaDelInscripcionDeCuatro= LocalDate.of(2023, 01, 03);
 		LocalDate fechaDelFinalizacionDeCuatro= LocalDate.of(2023, 02, 03);
-		String estadoDeCuatro="inactivo";
+		String estadoDeCuatro="activo";
 		String legajoCuatro="433FF3";
+		
 		String nombreDeLaAcademia = "Don Rip-Rip";
 
+		Integer valorEsperadoDeAlumnos=3;//uno esta inactivo
 
 	
 //ACCION		
-		Alumno raulRamirez =new Alumno(legajoUno,dniDeuno, nombreDeuno, celularDeuno, emailDeuno, direccionDeuno,fechaDelInscripcionDeuno,fechaDelFinalizacionDeuno,estadoDeuno);
+		Alumno RaulRamirez =new Alumno(legajoUno,dniDeuno, nombreDeuno, celularDeuno, emailDeuno, direccionDeuno,fechaDelInscripcionDeuno,fechaDelFinalizacionDeuno,estadoDeuno);
 		Alumno Lashir =new Alumno(legajoDos, dniDeDos, nombreDeDos, celularDeDos, emailDeDos, direccionDeDos, fechaDelInscripcionDeDos, fechaDelFinalizacionDeDos, estadoDeDos);
 		Alumno Menganito =new Alumno(legajoTres,dniDeTres, nombreDeTres, celularDeTres, emailDeTres,direccionDeTres, fechaDelInscripcionDeTres,fechaDelFinalizacionDeTres,estadoDeTres);
-		Alumno liciada =new Alumno(legajoCuatro,dniDeCuatro, nombreDeCuatro, celularDeCuatro, emailDeCuatro, direccionDeCuatro,fechaDelInscripcionDeCuatro,fechaDelFinalizacionDeCuatro,estadoDeCuatro);
-		Academia DonRipRip = new Academia(nombreDeLaAcademia);	
-		Boolean sePudoIngresarUno=DonRipRip.ingresarAlumnoALaAcademia(raulRamirez);
-		Boolean sePudoIngresarDos=DonRipRip.ingresarAlumnoALaAcademia(Lashir);
-		Boolean sePudoIngresarTres=DonRipRip.ingresarAlumnoALaAcademia(Menganito);
-		Boolean sePudoIngresarCuatro=DonRipRip.ingresarAlumnoALaAcademia(liciada);
-		//Integer sePudoOptenerCantidad=DonRipRip.optenerCantidadDeAlumnos();
-		
-//VALIDACION
+		Alumno Liciada =new Alumno(legajoCuatro,dniDeCuatro, nombreDeCuatro, celularDeCuatro, emailDeCuatro, direccionDeCuatro,fechaDelInscripcionDeCuatro,fechaDelFinalizacionDeCuatro,estadoDeCuatro);
 	
-
+		Academia DonRipRip = new Academia(nombreDeLaAcademia);
+		
+		Boolean sePudoIngresar1=DonRipRip.ingresarAlumnoALaAcademia(RaulRamirez);
+		Boolean sePudoIngresar2=DonRipRip.ingresarAlumnoALaAcademia(Lashir);
+		Boolean sePudoIngresar3=DonRipRip.ingresarAlumnoALaAcademia(Menganito);
+		Boolean sePudoIngresar4=DonRipRip.ingresarAlumnoALaAcademia(Liciada);
+		
+		Integer sePudoObtenerCantidad=DonRipRip.obtenerCantidadDeAlumnosActivos();
+		//System.out.println(sePudoObtenerCantidad);
+		//System.out.println(valorEsperadoDeAlumnos);
+		//VALIDACION
+	
+		assertEquals(valorEsperadoDeAlumnos,sePudoObtenerCantidad);
 	}
 
 	
