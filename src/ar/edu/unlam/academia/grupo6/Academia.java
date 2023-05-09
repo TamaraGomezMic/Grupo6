@@ -159,15 +159,55 @@ public class Academia {
 
 
 
-/*
-	public Boolean AgregoAlumnoAlCurso(Curso manejoInical, Alumno nuevoAlumno) {
+
+	public Instructor aumentarElSueldoDeUnInstructor(Double aumentoDelSueldo, String legajo) {
+		for(Instructor instructor:instructores) {
+			if(instructor.getLegajo().equals(legajo)){
+				
+				
+			}
+				
+		}
+		return null;
+	}
+
+
+
+
+	/*public Boolean AgregoAlumnoAlCurso(Curso manejoInical, Alumno nuevoAlumno) {
+		manejoInical.agregaUnALumno(nuevoAlumno);
+			
+				
+		return null;
+	}
+	*/
+
+	public Boolean AgregoAlumnoAlCurso(Integer codigoCurso, String Legajo) {
+		Boolean sePuedoInscribir=false;
+		Curso curso = buscarCursoPorCodigo(codigoCurso);
+		Alumno alumno = buscarAlumnoPorLegajo(Legajo);
+		curso.agregaUnALumno(alumno);
+		if(curso.mostrarALumno().equals(alumno)) {
+			return sePuedoInscribir=true;
+		}
 		
+			
 		
+		return null;
+	}
+	
+	
+	
+	public Boolean AgregoInstructorAlCurso(Integer codigoCurso, String Legajo) {
 		
+		Curso curso = buscarCursoPorCodigo(codigoCurso);
+		Instructor instructor= buscarInstructorPorLegajo(Legajo);
+		curso.agregaUnInstructor(instructor);
+				
 		
 		
 		return null;
 	}
-*/
+
 }
 

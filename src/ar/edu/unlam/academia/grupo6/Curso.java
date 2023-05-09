@@ -13,6 +13,11 @@ public class Curso {
 	private Double valorCuota;
 	private final Double VALOR_CLASE_EXTRA=1000.0;
 	private Integer claseExtra=0;
+	private Instructor instructor;
+	private Alumno Alumno;
+	private HashSet<Alumno>alumnos;	
+	private HashSet<Instructor>instructores;
+	
 	
 	//CONSTRUCTORES
 	public Curso(Integer codigoCurso, String tipoDeCurso, Integer duracionCurso,
@@ -107,6 +112,15 @@ public class Curso {
 
 		
 	}
+	
+	public void agregaUnALumno(Alumno nuevoAlumno) {
+		this.Alumno= nuevoAlumno;
+	//this.alumnos.add(nuevoAlumno);
+	
+}
+	public Alumno mostrarALumno() {
+		return Alumno;
+	}
 
 	@Override
 	public int hashCode() {
@@ -124,5 +138,8 @@ public class Curso {
 		Curso other = (Curso) obj;
 		return Objects.equals(codigoCurso, other.codigoCurso);
 	}
+
+
+	
 
 }
