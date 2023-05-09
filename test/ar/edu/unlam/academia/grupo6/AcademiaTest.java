@@ -139,10 +139,29 @@ public class AcademiaTest {
 		
 		
 	}
+	@Test
+	public void QueSePuedaModificarLaVigenciaDeUnCursoDeLaAcademia() {
+		//PREPARACION 
+		Integer codigoCurso = 1;
+		String tipoDeCurso = "Curso de manejo inicial"; 
+		Integer duracionCurso = 10;
+		Double valorCuota = 25000.00;
+		String nombreDeLaAcademia = "Don Rip-Rip";
+		Integer nuevaVigencia=51;
+		Integer vigenciaEsperada=51;
+		//ACCION
+		Curso manejoInical = new Curso(codigoCurso, tipoDeCurso, duracionCurso, valorCuota);
+		Academia DonRipRip = new Academia(nombreDeLaAcademia);
+		Boolean sePudo = DonRipRip.IngrasarCursoEnLaAcademia(manejoInical);
+		Integer verVigecia=DonRipRip.modificarVigenciaDelCurso(codigoCurso,nuevaVigencia);
+		//VALIDACION
+		System.out.println(vigenciaEsperada);
+		System.out.println(verVigecia);
+		assertEquals(vigenciaEsperada,verVigecia);
+		
+		
+	}
 
-	//QueSePuedaVerificarLaVigenciaDeUnCursoParaUnAlumno
-	//QueSePuedaAsignarUnInstructorYUnAlumnoAUnCurso
-	
 	
 	
 	

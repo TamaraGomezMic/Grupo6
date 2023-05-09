@@ -269,6 +269,19 @@ public class Academia {
 	}
 
 
+
+	public Integer modificarVigenciaDelCurso(Integer codigoCurso, Integer nuevaVigencia) {
+	for(Curso curso :cursos) {
+		if(curso.getCodigoCurso().equals(codigoCurso)) {
+			curso.setVigenciaCurso(nuevaVigencia);
+			return curso.getVigenciaCurso();
+			 
+		}
+	}
+		return null;
+	}
+
+
 }
 
 
