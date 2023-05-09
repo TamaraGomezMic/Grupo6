@@ -209,6 +209,32 @@ public class AcademiaTest {
 		assertTrue (SePudoRegistrar);
 	}
 	
+	@Test
+	public void queSePuedaAumentarElsueldoDelInstructorEnLaAcademia() {
+				
+		//PREPARACION 
+		Long dni =37246801L;
+		String legajo="433FF3";
+		String nombre ="lucas Barrios";
+		Long celular = 1123451234L;
+		String email="lucasbarrios@alumno.edu.ar";
+		String direccion ="calle falsa123";
+		Double sueldo=2400.00;
+		Double AumentoDelSueldo=500.00;
+		String turno="mañana";
+		String nombreDeLaAcademia = "Don Rip-Rip";
+		
+		
+		//ACCION
+		Academia DonRipRip = new Academia(nombreDeLaAcademia);
+		Instructor nuevoInstructor = new Instructor(legajo,dni,nombre,celular,email,direccion,sueldo,turno);
+		Boolean SePudoRegistrar = DonRipRip.registrarInstructorEnAcademia(nuevoInstructor);
+		Instructor seAumentoElSueldo = DonRipRip.aumentarElSueldoDeUnInstructor(AumentoDelSueldo,legajo);
+				
+		//VALIDACION
+		assertTrue (SePudoRegistrar);
+	}
+	
 	
 	
 	
@@ -382,7 +408,7 @@ public class AcademiaTest {
 	
 	
 	
-/*
+
 	@Test
 	public void queUnAlumnoSePuedaAnotarAUnCursoDeLaAcademia() {
 		
@@ -420,14 +446,14 @@ public class AcademiaTest {
 		
 		Boolean sePudoIngresar=DonRipRip.ingresarAlumnoALaAcademia(nuevoAlumno);
 		
-		Boolean sePudoIngresarElAlumnoAlCurso= DonRipRip.AgregoAlumnoAlCurso(manejoInical,nuevoAlumno);
+		Boolean sePudoIngresarElAlumnoAlCurso= DonRipRip.AgregoAlumnoAlCurso(codigoCurso,legajo);
 		
 		
 //VALIDACION
 		assertTrue(sePudoIngresarElAlumnoAlCurso);
 
 	}
-*/
+
 	
 
 	
