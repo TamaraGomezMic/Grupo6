@@ -119,8 +119,29 @@ public class AcademiaTest {
 		assertEquals(cantidadDeClasesTotalesEsperadas,cantidadDeClasesTotales);
 	
 	}
+	@Test
+	public void queSePuedaBuscarUnCursoPorCódigo() {
+		//PREPARACION 
+		Integer codigoCurso = 1;
+		String tipoDeCurso = "Curso de manejo inicial"; 
+		//duracion en clases
+		Integer duracionCurso = 10;
+		Double valorCuota = 25000.00;
+		String nombreDeLaAcademia = "Don Rip-Rip";
+		
+		//ACCION
+		Curso manejoInical = new Curso(codigoCurso, tipoDeCurso, duracionCurso, valorCuota);
+		Academia DonRipRip = new Academia(nombreDeLaAcademia);
+		Boolean sePudo = DonRipRip.IngrasarCursoEnLaAcademia(manejoInical);
+		Curso seEncontroCurso=
+		//VALIDACION
+		
 	
-	//queSePuedaBuscarUnCursoPorCódigoYDuración
+		
+						
+		
+	}
+
 	//QueSePuedaVerificarLaVigenciaDeUnCursoParaUnAlumno
 	//QueSePuedaAsignarUnInstructorYUnAlumnoAUnCurso
 	
@@ -310,10 +331,6 @@ public class AcademiaTest {
 		String estadoEsperado="inactivo";
 	
 	
-		
-		
-
-	
 //ACCION		
 		Alumno nuevoAlumno =new Alumno(legajo,dni, nombre, celular, email, direccion,fechaDelInscripcion,fechaDelFinalizacion,estado);
 		Academia DonRipRip = new Academia(nombreDeLaAcademia);	
@@ -325,6 +342,45 @@ public class AcademiaTest {
 		assertEquals(estadoEsperado,seModificoEstado.getEstado());
 
 	}
+	
+	
+	
+	@Test
+	public void queSePuedaVerElEstadoDelAlumnoEnLaAcademia() {
+		
+//PREPARACION 
+		Long dni =32432443L;
+		String nombre ="Menganito Ramirez";
+		Long celular = 1124356456L;
+		String email="menganoagarramedelamano@alumno.edu.ar";
+		String direccion ="calle walaby 2467 ";
+		String legajo="433FF3";
+//un mes debe durar como minimo
+		LocalDate fechaDelInscripcion= LocalDate.of(2023, 01, 03);
+		LocalDate fechaDelFinalizacion= LocalDate.of(2023, 02, 03);
+		String estado="activo";
+		String nombreDeLaAcademia = "Don Rip-Rip";
+	
+	
+	
+//ACCION		
+		Alumno nuevoAlumno =new Alumno(legajo,dni, nombre, celular, email, direccion,fechaDelInscripcion,fechaDelFinalizacion,estado);
+		Academia DonRipRip = new Academia(nombreDeLaAcademia);	
+		Boolean sePudoIngresar=DonRipRip.ingresarAlumnoALaAcademia(nuevoAlumno);
+		Alumno seEncontro = DonRipRip.buscarAlumnoPorLegajo(legajo);
+		String VerElEstado = seEncontro.getEstado();
+		
+//VALIDACION
+		assertEquals(estado,seEncontro.getEstado());
+
+	}
+	
+
+	
+	//queSePuedaObtenerLaCantidadDeAlumnosInscriptosEnLaAcademia
+	
+	
+	
 	
 	
 	
@@ -376,8 +432,8 @@ public class AcademiaTest {
 */
 	
 
-	//queSePuedaVerElEstadoDelAlumnoEnLaAcademia
-	//queSePuedaObtenerLaCantidadDeAlumnosInscriptosEnLaAcademia
+	
+
 
 
 	
