@@ -85,7 +85,9 @@ public class Curso {
 	public void setValorClaseExtra(Double valorClaseExtra) {
 		this.valorClaseExtra = valorClaseExtra;
 	}
-
-
+	
+	public Boolean ingresarClaseExtra(Integer .) {
+		this
+	}
 
 }
