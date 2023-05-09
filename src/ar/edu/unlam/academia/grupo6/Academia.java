@@ -244,6 +244,7 @@ public class Academia {
 
 
 
+
 	public Integer contarCantidadDeInstructoresDeLaManiana() {
 		Integer contador =0;
 		
@@ -256,7 +257,24 @@ public class Academia {
 		
 		return contador;
 	}
+	
+	public Instructor buscarInstructorPorDniyNombre(Long dni, String nombre) {
+		for(Instructor instructor:instructores) {
+			if(instructor.getNombre().equals(nombre) && instructor.getDni().equals(dni)) {
+				return instructor;
+			}
+		}
+		return null;
+
+	}
 
 
 }
+
+
+
+	
+
+
+
 

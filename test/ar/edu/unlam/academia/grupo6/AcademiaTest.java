@@ -274,6 +274,7 @@ public class AcademiaTest {
 	
 	
 	@Test
+
 	public void queSePuedaSaberCuantosInstructoresHayEnLaMañana() {
 		
 		//PREPARACION 
@@ -285,6 +286,7 @@ public class AcademiaTest {
 		String direccion ="calle falsa123";
 		Double sueldo=2400.00;
 		String turno="mañana";
+
 		
 		//instructor 2
 		Long dni2 =37246801L;
@@ -331,10 +333,48 @@ public class AcademiaTest {
 		//VALIDACION
 		assertEquals (cantidadDeInstructoresEsperados, CantidadDeInstructores);
 	}
+
 	
 	
 	
+		public void queSePuedaBuscarUnInstructoPorNombreYDni() {
+		//PREPARACION 
+		Long dni =37246801L;
+		Integer codigo=1;
+		String nombre ="lucas Barrios";
+		String legajo="433FF3";
+		Long celular = 1123451234L;
+		String email="lucasbarrios@alumno.edu.ar";
+		String direccion ="calle falsa123";
+		Double sueldo=2400.00;
+		String turno="mañana";
+		String nombreDeLaAcademia = "Don Rip-Rip";
+		
+		Integer codigoCurso = 1;
+		String tipoDeCurso = "Curso de manejo inicial"; 
+		//duracion en clases
+		Integer duracionCurso = 10;
+		Double valorCuota = 25000.00;
+		
+				
+		//ACCION	
+		Academia DonRipRip = new Academia(nombreDeLaAcademia);
+		Instructor nuevoInstructor = new Instructor(legajo,dni,nombre,celular,email,direccion,sueldo,turno);
+		Boolean sePudo = DonRipRip.registrarInstructorEnAcademia(nuevoInstructor);
+
+		Instructor seEncontroDniyNombre = DonRipRip.buscarInstructorPorDniyNombre(dni, nombre);
+		
+		
+		//VALIDACION
+		assertEquals (dni, seEncontroDniyNombre.getDni());
+		assertEquals (nombre, seEncontroDniyNombre.getNombre());
+	}
 	
+
+	
+	
+	
+			
 	
 	
 	// ALUMNO +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
