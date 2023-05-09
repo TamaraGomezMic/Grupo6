@@ -10,15 +10,18 @@ public class Alumno extends Persona{
 	private LocalDate fechaDelInscripcion;
 	private LocalDate fechaDelFinalizacion;
 	private String estado;
-	private HashSet<Curso>cursos;
+	private Integer asistencia;
 	
-//cinstructor
+
+
+
+	//cinstructor
 	public Alumno(String legajo, Long dni, String nombre, Long celular, String email, String direccion, 
 	LocalDate fechaDelInscripcion, LocalDate fechaDelFinalizacion, String estado) {
 	super(legajo,dni, nombre,celular, email, direccion);
 	this.fechaDelFinalizacion=fechaDelFinalizacion;
 	this.fechaDelInscripcion=fechaDelInscripcion;
-	cursos = new HashSet<>();
+	
 	this.estado=estado;
 	
 		
@@ -65,6 +68,14 @@ public class Alumno extends Persona{
 		this.estado="activo";
 		this.estado = estado;
 	}
+	
+public Integer getAsistencia() {
+		return asistencia;
+	}
 
+
+	public void setAsistencia(Integer asistencia) {
+		this.asistencia = asistencia;
+	}
 
 }

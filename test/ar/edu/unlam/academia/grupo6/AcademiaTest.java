@@ -136,9 +136,7 @@ public class AcademiaTest {
 		Curso seEncontroCurso=DonRipRip.buscarCursoPorCodigo(codigoCurso);
 		//VALIDACION
 		assertEquals(codigoCurso,seEncontroCurso.getCodigoCurso());
-	
 		
-						
 		
 	}
 

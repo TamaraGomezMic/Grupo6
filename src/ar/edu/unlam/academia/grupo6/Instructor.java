@@ -5,6 +5,7 @@ import java.util.Objects;
 public class Instructor extends Persona {
 
 	private String turno;
+	private Double sueldo;
 
 	
 	
@@ -16,6 +17,7 @@ public class Instructor extends Persona {
 			Double sueldo, String turno) {
 		super(legajo,dni,nombre,celular,email,direccion);
 		this.turno=turno;
+		this.sueldo=sueldo;
 	
 	}
 
@@ -42,6 +44,18 @@ public class Instructor extends Persona {
 
 	public void setTurno(String turno) {
 		this.turno = turno;
+	}
+
+
+
+	public Double getSueldo() {
+		return sueldo;
+	}
+
+
+
+	public void setSueldo(Double sueldo) {
+		this.sueldo = sueldo;
 	}
 
 
