@@ -133,9 +133,9 @@ public class AcademiaTest {
 		Curso manejoInical = new Curso(codigoCurso, tipoDeCurso, duracionCurso, valorCuota);
 		Academia DonRipRip = new Academia(nombreDeLaAcademia);
 		Boolean sePudo = DonRipRip.IngrasarCursoEnLaAcademia(manejoInical);
-		Curso seEncontroCurso=
+		Curso seEncontroCurso=DonRipRip.buscarCursoPorCodigo(codigoCurso);
 		//VALIDACION
-		
+		assertEquals(codigoCurso,seEncontroCurso.getCodigoCurso());
 	
 		
 						

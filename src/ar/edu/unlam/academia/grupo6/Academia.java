@@ -147,6 +147,18 @@ public class Academia {
 
 
 
+
+	public Curso buscarCursoPorCodigo(Integer codigoCurso) {
+		for(Curso curso:cursos) {
+			if(curso.getCodigoCurso().equals(codigoCurso)) {
+				return curso;
+			}
+		}
+		return null;
+	}
+
+
+
 /*
 	public Boolean AgregoAlumnoAlCurso(Curso manejoInical, Alumno nuevoAlumno) {
 		
