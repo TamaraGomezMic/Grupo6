@@ -455,7 +455,73 @@ public class AcademiaTest {
 	}
 
 	
+	@Test
+	public void queSePuedaObtenerLaCantidadDeAlumnosInscriptosActivosEnLaAcademia() {
+		
+//PREPARACION 
+		//alumno 1
+		Long dniDeuno =32432443L;
+		String nombreDeuno ="raul Ramirez";
+		Long celularDeuno = 113456556L;
+		String emailDeuno="ragaremadelamano@alumno.edu.ar";
+		String direccionDeuno ="calluehu 244 ";
+		LocalDate fechaDelInscripcionDeuno= LocalDate.of(2023, 01, 03);
+		LocalDate fechaDelFinalizacionDeuno= LocalDate.of(2023, 02, 03);
+		String estadoDeuno="activo";
+		String legajoUno="123FF3";
+		//alumno 2
+		Long dniDeDos =324324543L;
+		String nombreDeDos ="Lashir";
+		Long celularDeDos = 1144444456L;
+		String emailDeDos="tonitini@alumno.edu.ar";
+		String direccionDeDos ="machupichu 3333 ";
+		LocalDate fechaDelInscripcionDeDos= LocalDate.of(2023, 01, 03);
+		LocalDate fechaDelFinalizacionDeDos= LocalDate.of(2023, 02, 03);
+		String estadoDeDos="activo";
+		String legajoDos="365FF3";
+		
+		//alumno 3
+		Long dniDeTres =324324643L;
+		String nombreDeTres ="Menganito Ramirez";
+		Long celularDeTres = 1124356456L;
+		String emailDeTres="menganoagarramedelamano@alumno.edu.ar";
+		String direccionDeTres ="calle walaby 2467 ";
+		LocalDate fechaDelInscripcionDeTres= LocalDate.of(2023, 01, 03);
+		LocalDate fechaDelFinalizacionDeTres= LocalDate.of(2023, 02, 03);
+		String estadoDeTres="activo";
+		String legajoTres="477FF3";
+		//alumno 3
+		Long dniDeCuatro =32432443L;
+		String nombreDeCuatro ="juanita liciada";
+		Long celularDeCuatro = 12333433356L;
+		String emailDeCuatro="laliciadaone@alumno.edu.ar";
+		String direccionDeCuatro ="calle baches 267 ";
+		LocalDate fechaDelInscripcionDeCuatro= LocalDate.of(2023, 01, 03);
+		LocalDate fechaDelFinalizacionDeCuatro= LocalDate.of(2023, 02, 03);
+		String estadoDeCuatro="inactivo";
+		String legajoCuatro="433FF3";
+		String nombreDeLaAcademia = "Don Rip-Rip";
 
+
+	
+//ACCION		
+		Alumno raulRamirez =new Alumno(legajoUno,dniDeuno, nombreDeuno, celularDeuno, emailDeuno, direccionDeuno,fechaDelInscripcionDeuno,fechaDelFinalizacionDeuno,estadoDeuno);
+		Alumno Lashir =new Alumno(legajoDos, dniDeDos, nombreDeDos, celularDeDos, emailDeDos, direccionDeDos, fechaDelInscripcionDeDos, fechaDelFinalizacionDeDos, estadoDeDos);
+		Alumno Menganito =new Alumno(legajoTres,dniDeTres, nombreDeTres, celularDeTres, emailDeTres,direccionDeTres, fechaDelInscripcionDeTres,fechaDelFinalizacionDeTres,estadoDeTres);
+		Alumno liciada =new Alumno(legajoCuatro,dniDeCuatro, nombreDeCuatro, celularDeCuatro, emailDeCuatro, direccionDeCuatro,fechaDelInscripcionDeCuatro,fechaDelFinalizacionDeCuatro,estadoDeCuatro);
+		Academia DonRipRip = new Academia(nombreDeLaAcademia);	
+		Boolean sePudoIngresarUno=DonRipRip.ingresarAlumnoALaAcademia(raulRamirez);
+		Boolean sePudoIngresarDos=DonRipRip.ingresarAlumnoALaAcademia(Lashir);
+		Boolean sePudoIngresarTres=DonRipRip.ingresarAlumnoALaAcademia(Menganito);
+		Boolean sePudoIngresarCuatro=DonRipRip.ingresarAlumnoALaAcademia(liciada);
+		Integer sePudoOptenerCantidad=DonRipRip.optenerCantidadDeAlumnos();
+		
+//VALIDACION
+	
+
+	}
+
+	
 	
 
 
