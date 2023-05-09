@@ -219,20 +219,21 @@ public class AcademiaTest {
 		Long celular = 1123451234L;
 		String email="lucasbarrios@alumno.edu.ar";
 		String direccion ="calle falsa123";
-		Double sueldo=2400.00;
-		Double AumentoDelSueldo=500.00;
+		Double sueldo=24000.00;
+		Double AumentoDelSueldo=1.1;
 		String turno="mañana";
 		String nombreDeLaAcademia = "Don Rip-Rip";
-		
+		Double sueldoEsperado = sueldo*AumentoDelSueldo;
 		
 		//ACCION
 		Academia DonRipRip = new Academia(nombreDeLaAcademia);
 		Instructor nuevoInstructor = new Instructor(legajo,dni,nombre,celular,email,direccion,sueldo,turno);
 		Boolean SePudoRegistrar = DonRipRip.registrarInstructorEnAcademia(nuevoInstructor);
 		Instructor seAumentoElSueldo = DonRipRip.aumentarElSueldoDeUnInstructor(AumentoDelSueldo,legajo);
-				
+		System.out.println(seAumentoElSueldo.getSueldo());		
 		//VALIDACION
 		assertTrue (SePudoRegistrar);
+		assertEquals (sueldoEsperado, seAumentoElSueldo.getSueldo());
 	}
 	
 	
@@ -514,7 +515,7 @@ public class AcademiaTest {
 		Boolean sePudoIngresarDos=DonRipRip.ingresarAlumnoALaAcademia(Lashir);
 		Boolean sePudoIngresarTres=DonRipRip.ingresarAlumnoALaAcademia(Menganito);
 		Boolean sePudoIngresarCuatro=DonRipRip.ingresarAlumnoALaAcademia(liciada);
-		Integer sePudoOptenerCantidad=DonRipRip.optenerCantidadDeAlumnos();
+		//Integer sePudoOptenerCantidad=DonRipRip.optenerCantidadDeAlumnos();
 		
 //VALIDACION
 	

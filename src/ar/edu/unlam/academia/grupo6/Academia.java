@@ -161,13 +161,14 @@ public class Academia {
 
 
 	public Instructor aumentarElSueldoDeUnInstructor(Double aumentoDelSueldo, String legajo) {
-		for(Instructor instructor:instructores) {
-			if(instructor.getLegajo().equals(legajo)){
-				
-				
+			for(Instructor instructor:instructores){
+				if(instructor.getLegajo().equals(legajo)) {
+					instructor.setSueldo(instructor.getSueldo()*aumentoDelSueldo);
+					return instructor;
+				}
 			}
 				
-		}
+	
 		return null;
 	}
 
