@@ -242,5 +242,24 @@ public class Academia {
 	}
 
 
+
+
+	public Instructor buscarInstructorPorDniyNombre(Long dni, String nombre) {
+		for(Instructor instructor:instructores) {
+			if(instructor.getNombre().equals(nombre) && instructor.getDni().equals(dni)) {
+				return instructor;
+			}
+		}
+		return null;
+	}
+
+
 }
+
+
+
+	
+
+
+
 
