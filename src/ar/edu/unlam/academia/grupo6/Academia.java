@@ -242,5 +242,21 @@ public class Academia {
 	}
 
 
+
+
+	public Integer contarCantidadDeInstructoresDeLaManiana() {
+		Integer contador =0;
+		
+		for(Instructor instructor:instructores) {
+			if(instructor.getTurno()=="mañana") {
+				contador ++;
+				
+			}
+		}
+		
+		return contador;
+	}
+
+
 }
 

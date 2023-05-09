@@ -273,7 +273,64 @@ public class AcademiaTest {
 	}
 	
 	
-	
+	@Test
+	public void queSePuedaSaberCuantosInstructoresHayEnLaMañana() {
+		
+		//PREPARACION 
+		Long dni =37246801L;
+		String legajo="43323";
+		String nombre ="lucas gutierres";
+		Long celular = 1123451234L;
+		String email="lucasbarrios@alumno.edu.ar";
+		String direccion ="calle falsa123";
+		Double sueldo=2400.00;
+		String turno="mañana";
+		
+		//instructor 2
+		Long dni2 =37246801L;
+		String legajo2="433FF3";
+		String nombre2 ="lucas Barrios";
+		Long celular2 = 1123451234L;
+		String email2="lucasbarrios@alumno.edu.ar";
+		String direccion2 ="calle falsa123";
+		Double sueldo2=2400.00;
+		String turno2="mañana";
+		
+		//instructor 3
+		Long dni3 =37246801L;
+		String legajo3="433F123";
+		String nombre3 ="lucas Saldoban";
+		Long celular3 = 1123451234L;
+		String email3="lucasbarrios@alumno.edu.ar";
+		String direccion3 ="calle falsa123";
+		Double sueldo3=2400.00;
+		String turno3="tarde";
+		
+		String nombreDeLaAcademia = "Don Rip-Rip";
+		Integer cantidadDeInstructoresEsperados =2;
+		
+		
+		//duracion en clases
+		
+		
+		
+		//ACCION
+		Academia DonRipRip = new Academia(nombreDeLaAcademia);
+		
+		Instructor nuevoInstructor1 = new Instructor(legajo,dni,nombre,celular,email,direccion,sueldo,turno);
+		Instructor nuevoInstructor2 = new Instructor(legajo2,dni2,nombre2,celular2,email2,direccion2,sueldo2,turno2);
+		Instructor nuevoInstructor3 = new Instructor(legajo3,dni3,nombre3,celular3,email3,direccion3,sueldo3,turno3);
+		
+		Boolean sePudo1 = DonRipRip.registrarInstructorEnAcademia(nuevoInstructor1);
+		Boolean sePudo2 = DonRipRip.registrarInstructorEnAcademia(nuevoInstructor2);
+		Boolean sePudo3 = DonRipRip.registrarInstructorEnAcademia(nuevoInstructor3);
+		
+		Integer CantidadDeInstructores= DonRipRip.contarCantidadDeInstructoresDeLaManiana();
+		
+		
+		//VALIDACION
+		assertEquals (cantidadDeInstructoresEsperados, CantidadDeInstructores);
+	}
 	
 	
 	
