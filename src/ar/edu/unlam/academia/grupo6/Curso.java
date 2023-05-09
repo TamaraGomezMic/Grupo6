@@ -3,22 +3,6 @@ package ar.edu.unlam.academia.grupo6;
 import java.util.Objects;
 
 public class Curso {
-	@Override
-	public int hashCode() {
-		return Objects.hash(codigoCurso);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Curso other = (Curso) obj;
-		return Objects.equals(codigoCurso, other.codigoCurso);
-	}
 
 	//ATRIBUTOS
 	private Integer codigoCurso;
@@ -26,19 +10,19 @@ public class Curso {
 	private final Integer VIGENCIA_DEL_CURSO = 31;
 	private Integer duracionCurso;
 	private Double valorCuota;
-	private Double valorClaseExtra;
-	
+	private final Double VALOR_CLASE_EXTRA=1000.0;
+	private Integer claseExtra;
 	//CONSTRUCTORES
-	
 	public Curso(Integer codigoCurso, String tipoDeCurso, Integer duracionCurso,
-			Double valorCuota, Double valorClaseExtra) {
+			Double valorCuota) {
 		
 		this.codigoCurso = codigoCurso;
 		this.duracionCurso = codigoCurso;
 		this.tipoDeCurso = tipoDeCurso;
-		this.valorClaseExtra = valorClaseExtra;
 		this.valorCuota = valorCuota;
+	
 	}
+
 	
 	//METODOS
 
@@ -77,15 +61,56 @@ public class Curso {
 	public void setValorCuota(Double valorCuota) {
 		this.valorCuota = valorCuota;
 	}
+	
 
-	public Double getValorClaseExtra() {
-		return valorClaseExtra;
+	public Integer getVIGENCIA_DEL_CURSO() {
+		return VIGENCIA_DEL_CURSO;
 	}
 
-	public void setValorClaseExtra(Double valorClaseExtra) {
-		this.valorClaseExtra = valorClaseExtra;
+	public Double getVALOR_CLASE_EXTRA() {
+		return VALOR_CLASE_EXTRA;
 	}
 
+	@Override
+	public int hashCode() {
+		return Objects.hash(codigoCurso);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Curso other = (Curso) obj;
+		return Objects.equals(codigoCurso, other.codigoCurso);
+	}
+	
+//ver q pasa si las clases ya empiezan con clase extra cero==>
+	public Integer getClaseExtra() {
+		return claseExtra;
+	}
+
+	public void setClaseExtra(Integer cantidadDeClasesExtra) {
+		this.claseExtra=0; 
+		this.claseExtra = cantidadDeClasesExtra;
+	}
+	
+	
+
+	public Integer queSePuedaAgregarUnaClaseExtraAlCurso(Integer cantidadDeClasesExtra) {
+		Integer respuesta;    
+		 	    
+		    this.setClaseExtra(cantidadDeClasesExtra);
+		    respuesta=this.getClaseExtra();
+		    System.out.println(this.getClaseExtra());
+		    
+		 
+		return respuesta;
+
+	}
 
 
 }

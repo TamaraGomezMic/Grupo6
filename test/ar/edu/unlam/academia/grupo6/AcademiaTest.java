@@ -36,15 +36,13 @@ public class AcademiaTest {
 		String tipoDeCurso = "Curso de manejo inicial"; 
 		Integer duracionCurso = 10;
 		Double valorCuota = 25000.00;
-		Double valorClaseExtra = 1000.00;
 		
 		
 		//ACCION
-		Curso nombreDelCurso = new Curso(codigoCurso, tipoDeCurso, duracionCurso, valorCuota, valorClaseExtra);
-		
-		
+		Curso manejoInicial = new Curso(codigoCurso, tipoDeCurso, duracionCurso, valorCuota);
+			
 		//VALIDACION
-		assertNotNull (nombreDelCurso); 
+		assertNotNull (manejoInicial); 
 		
 	}
 	
@@ -53,24 +51,52 @@ public class AcademiaTest {
 		//PREPARACION 
 		Integer codigoCurso = 1;
 		String tipoDeCurso = "Curso de manejo inicial"; 
+		//duracion en clases
 		Integer duracionCurso = 10;
 		Double valorCuota = 25000.00;
-		Double valorClaseExtra = 1000.00;
 		String nombreDeLaAcademia = "Don Rip-Rip";
 		
 		//ACCION
-		Curso nombreDelCurso = new Curso(codigoCurso, tipoDeCurso, duracionCurso, valorCuota, valorClaseExtra);
+		Curso manejoInical = new Curso(codigoCurso, tipoDeCurso, duracionCurso, valorCuota);
 		Academia DonRipRip = new Academia(nombreDeLaAcademia);
-		Boolean sePudo = DonRipRip.IngrasarCursoEnLaAcademia(nombreDelCurso);
+		Boolean sePudo = DonRipRip.IngrasarCursoEnLaAcademia(manejoInical);
 		
 		//VALIDACION
 		
 		assertTrue (sePudo);
-		assertNotNull (nombreDelCurso); 
+		assertNotNull (manejoInical); 
 		
 						
 		
 	}
+	@Test
+	public void queSePuedanAgregarClasesExtraAUnCurso() {
+		//PREPARACION 
+		Integer codigoCurso = 1;
+		String tipoDeCurso = "Curso de manejo inicial"; 
+		Integer duracionCurso = 10;
+		Double valorCuota = 25000.00;
+		String nombreDeLaAcademia = "Don Rip-Rip";
+		Integer cantidadDeClasesExtra=1;
+		
+		
+		//ACCION
+		Curso manejoInicial = new Curso(codigoCurso, tipoDeCurso, duracionCurso, valorCuota);
+		Academia DonRipRip = new Academia(nombreDeLaAcademia);
+		Boolean sePudo = DonRipRip.IngrasarCursoEnLaAcademia(manejoInicial);
+		Integer agregarClaseExtra =manejoInicial.queSePuedaAgregarUnaClaseExtraAlCurso(cantidadDeClasesExtra);
+	
+		//VALIDACION
+		
+		assertTrue (sePudo);
+		assertNotNull (manejoInicial); 
+		assertEquals(agregarClaseExtra,cantidadDeClasesExtra);
+	
+	}
+	
+	//queSePuedaBuscarUnCursoPorCódigoYDuración
+	//QueSePuedaVerificarLaVigenciaDeUnCursoParaUnAlumno
+	//QueSePuedaAsignarUnInstructorYUnAlumnoAUnCurso
 	
 	
 	
@@ -229,9 +255,9 @@ public class AcademiaTest {
 		assertTrue(sePudoIngresar);
 
 	}
-	
-	
-	
+
+	//queSePuedaVerElEstadoDelAlumnoEnLaAcademia
+	//queSePuedaObtenerLaCantidadDeAlumnosInscriptosEnLaAcademia
 
 
 	

@@ -108,7 +108,7 @@ public abstract class Persona {
 	// selecciono por que parametro vav a comparar (dni)
 	@Override
 	public int hashCode() {
-		return Objects.hash(dni);
+		return Objects.hash(legajo);
 	}
 
 

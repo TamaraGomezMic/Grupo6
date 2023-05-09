@@ -25,7 +25,6 @@ public class Instructor extends Persona {
 		super();
 		
 	}
-
 	
 	
 	//GETERS & SETTERS 
