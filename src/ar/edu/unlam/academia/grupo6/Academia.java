@@ -127,6 +127,26 @@ public class Academia {
 
 
 
+
+	public Alumno modificarEstadoDelAlumno(String legajo) {
+		for(Alumno alumno:alumnos) {
+			if(alumno.getLegajo().equals(legajo)) {
+				if(alumno.getEstado() == "activo") {
+					alumno.setEstado("inactivo");
+					return alumno;
+				}
+				else
+				{
+					alumno.setEstado("activo");
+					return alumno;
+				}
+			}
+		}
+		return null;
+	}
+
+
+
 /*
 	public Boolean AgregoAlumnoAlCurso(Curso manejoInical, Alumno nuevoAlumno) {
 		

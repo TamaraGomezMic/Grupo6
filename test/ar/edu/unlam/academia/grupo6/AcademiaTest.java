@@ -291,6 +291,40 @@ public class AcademiaTest {
 		assertEquals(legajo,seEncontro.getLegajo());
 
 	}
+
+	@Test
+	public void queSePuedaCambiarElEstadoDeUnAlumnoEnLaAcademia() {
+		
+//PREPARACION 
+		Long dni =32432443L;
+		String nombre ="Menganito Ramirez";
+		Long celular = 1124356456L;
+		String email="menganoagarramedelamano@alumno.edu.ar";
+		String direccion ="calle walaby 2467 ";
+		String legajo="433FF3";
+//un mes debe durar como minimo
+		LocalDate fechaDelInscripcion= LocalDate.of(2023, 01, 03);
+		LocalDate fechaDelFinalizacion= LocalDate.of(2023, 02, 03);
+		String estado="activo";
+		String nombreDeLaAcademia = "Don Rip-Rip";
+		String estadoEsperado="inactivo";
+	
+	
+		
+		
+
+	
+//ACCION		
+		Alumno nuevoAlumno =new Alumno(legajo,dni, nombre, celular, email, direccion,fechaDelInscripcion,fechaDelFinalizacion,estado);
+		Academia DonRipRip = new Academia(nombreDeLaAcademia);	
+		Boolean sePudoIngresar=DonRipRip.ingresarAlumnoALaAcademia(nuevoAlumno);
+		Alumno seEncontro = DonRipRip.buscarAlumnoPorLegajo(legajo);
+		Alumno seModificoEstado = DonRipRip.modificarEstadoDelAlumno(legajo);
+		
+//VALIDACION
+		assertEquals(estadoEsperado,seModificoEstado.getEstado());
+
+	}
 	
 	
 	
