@@ -104,8 +104,8 @@ public abstract class Persona {
 	}
 
 
+	// selecciono por que parametro voy a comparar (legajo)
 
-	// selecciono por que parametro vav a comparar (dni)
 	@Override
 	public int hashCode() {
 		return Objects.hash(legajo);
@@ -122,8 +122,12 @@ public abstract class Persona {
 		if (getClass() != obj.getClass())
 			return false;
 		Persona other = (Persona) obj;
-		return Objects.equals(dni, other.dni);
+		return Objects.equals(legajo, other.legajo);
 	}
+
+
+
+
 	
 	
 	//METODO

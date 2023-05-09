@@ -12,6 +12,8 @@ public class Academia {
 	private HashSet<Curso>cursos;
 	private HashSet<Instructor>instructores;
 	private HashSet<Alumno>alumnos;
+// esta clase contendria al instructor asignado y a los alumnos que se hayan ingresado al curso 
+	//private List<Clase>clases;
 	
 	
 
@@ -110,5 +112,30 @@ public class Academia {
 		return respuesta;
 	}
 
+
+
+
+	public Alumno buscarAlumnoPorLegajo(String legajo) {
+		
+		for(Alumno alumno:alumnos) {
+			if(alumno.getLegajo().equals(legajo)) {
+				return alumno;
+			}
+		}
+		return null;
+	}
+
+
+
+/*
+	public Boolean AgregoAlumnoAlCurso(Curso manejoInical, Alumno nuevoAlumno) {
+		
+		
+		
+		
+		
+		return null;
+	}
+*/
 }
 

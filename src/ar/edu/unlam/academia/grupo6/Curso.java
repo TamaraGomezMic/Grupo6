@@ -1,5 +1,6 @@
 package ar.edu.unlam.academia.grupo6;
 
+import java.util.HashSet;
 import java.util.Objects;
 
 public class Curso {
@@ -12,6 +13,7 @@ public class Curso {
 	private Double valorCuota;
 	private final Double VALOR_CLASE_EXTRA=1000.0;
 	private Integer claseExtra=0;
+	
 	//CONSTRUCTORES
 	public Curso(Integer codigoCurso, String tipoDeCurso, Integer duracionCurso,
 			Double valorCuota) {
@@ -20,6 +22,7 @@ public class Curso {
 		this.duracionCurso = duracionCurso;
 		this.tipoDeCurso = tipoDeCurso;
 		this.valorCuota = valorCuota;
+		
 	
 	}
 
@@ -70,29 +73,9 @@ public class Curso {
 	public Double getVALOR_CLASE_EXTRA() {
 		return VALOR_CLASE_EXTRA;
 	}
-<<<<<<< HEAD
-	
-	public Boolean ingresarClaseExtra(Integer .) {
-		this
-	}
-=======
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(codigoCurso);
-	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Curso other = (Curso) obj;
-		return Objects.equals(codigoCurso, other.codigoCurso);
-	}
+
 	
 //ver q pasa si las clases ya empiezan con clase extra cero==>
 	public Integer getClaseExtra() {
@@ -125,6 +108,21 @@ public class Curso {
 		
 	}
 
->>>>>>> ebb4e5c2e667b4b0dc1ccc81aadcf204704140da
+	@Override
+	public int hashCode() {
+		return Objects.hash(codigoCurso);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Curso other = (Curso) obj;
+		return Objects.equals(codigoCurso, other.codigoCurso);
+	}
 
 }
