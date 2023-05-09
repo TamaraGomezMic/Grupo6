@@ -201,12 +201,28 @@ public class Academia {
 	
 	public Boolean AgregoInstructorAlCurso(Integer codigoCurso, String Legajo) {
 		
+		Boolean sePuedoAgregar=false;
 		Curso curso = buscarCursoPorCodigo(codigoCurso);
 		Instructor instructor= buscarInstructorPorLegajo(Legajo);
-		curso.agregaUnInstructor(instructor);
-				
+		curso.agregarUnInstructor(instructor);
+	    if(curso.mostrarInstructor().equals(instructor)) {
+			return sePuedoAgregar=true;
+		}
 		
-		
+		return null;
+	}
+
+
+
+
+
+
+	private Instructor buscarInstructorPorLegajo(String legajo) {
+		for(Instructor instructor:instructores) {
+			if(instructor.getLegajo().equals(legajo)) {
+				return instructor;
+			}
+		}
 		return null;
 	}
 
@@ -224,6 +240,7 @@ public class Academia {
 		}
 		return contador;
 	}
+
 
 }
 

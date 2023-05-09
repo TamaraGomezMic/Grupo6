@@ -209,6 +209,8 @@ public class AcademiaTest {
 		assertTrue (SePudoRegistrar);
 	}
 	
+	
+	
 	@Test
 	public void queSePuedaAumentarElsueldoDelInstructorEnLaAcademia() {
 				
@@ -237,10 +239,38 @@ public class AcademiaTest {
 	}
 	
 	
-	
-	
-	
-	
+	@Test
+	public void queSePuedaAgregarUnInstructorAUnCursoEnLaAcademia() {
+		
+		//PREPARACION 
+		Long dni =37246801L;
+		String legajo="433FF3";
+		String nombre ="lucas Barrios";
+		Long celular = 1123451234L;
+		String email="lucasbarrios@alumno.edu.ar";
+		String direccion ="calle falsa123";
+		Double sueldo=2400.00;
+		String turno="mañana";
+		String nombreDeLaAcademia = "Don Rip-Rip";
+		
+		Integer codigoCurso = 1;
+		String tipoDeCurso = "Curso de manejo inicial"; 
+		//duracion en clases
+		Integer duracionCurso = 10;
+		Double valorCuota = 25000.00;
+		
+		
+		//ACCION
+		Academia DonRipRip = new Academia(nombreDeLaAcademia);
+		Curso manejoInicial = new Curso(codigoCurso, tipoDeCurso, duracionCurso, valorCuota);
+		Instructor nuevoInstructor = new Instructor(legajo,dni,nombre,celular,email,direccion,sueldo,turno);
+		Boolean sePudo = DonRipRip.registrarInstructorEnAcademia(nuevoInstructor);
+		Boolean seIngreso = DonRipRip.IngrasarCursoEnLaAcademia(manejoInicial);
+		Boolean SePudoAgregar = DonRipRip.AgregoInstructorAlCurso(codigoCurso, legajo);
+		System.out.println(manejoInicial.mostrarInstructor().getNombre());
+		//VALIDACION
+		assertTrue (SePudoAgregar);
+	}
 	
 	
 	

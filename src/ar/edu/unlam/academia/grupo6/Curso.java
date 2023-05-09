@@ -14,7 +14,7 @@ public class Curso {
 	private final Double VALOR_CLASE_EXTRA=1000.0;
 	private Integer claseExtra=0;
 	private Instructor instructor;
-	private Alumno Alumno;
+	private Alumno alumno;
 	private HashSet<Alumno>alumnos;	
 	private HashSet<Instructor>instructores;
 	
@@ -114,12 +114,12 @@ public class Curso {
 	}
 	
 	public void agregaUnALumno(Alumno nuevoAlumno) {
-		this.Alumno= nuevoAlumno;
+		this.alumno= nuevoAlumno;
 	//this.alumnos.add(nuevoAlumno);
 	
 }
 	public Alumno mostrarALumno() {
-		return Alumno;
+		return alumno;
 	}
 
 	@Override
@@ -139,6 +139,15 @@ public class Curso {
 		return Objects.equals(codigoCurso, other.codigoCurso);
 	}
 
+
+	public void agregarUnInstructor(Instructor instructor2) {
+		this.instructor = instructor2;
+		
+	}
+
+	public Instructor mostrarInstructor() {
+		return instructor;
+	}
 
 	
 
