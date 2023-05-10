@@ -287,7 +287,7 @@ public Integer modificarVigenciaDelCurso(Integer codigoCurso, Integer nuevaVigen
 		}
 	}
 		return null;
-	}
+}
 
 
 
@@ -349,15 +349,23 @@ public Integer agregarUnaClaseExtraAUnCursoDeUnAlumnoAUnaAcademia( Integer codig
 	}
 	return respuesta;
 }
-	
+
+
+
+
+public Boolean modificarElNumeroDeTelefonoDelAlumno(String legajo, Long celularNuevo) {
+	Boolean sePudoModificar = false;
+		for(Alumno alumno:alumnos) {
+			if(alumno.getLegajo().equals(legajo)){	
+				alumno.setCelular(celularNuevo);
+				sePudoModificar = true;
+			}	
+		}
+		
+		return sePudoModificar;
 }
 
-
-
-
-
-
-
+}
 
 
 
