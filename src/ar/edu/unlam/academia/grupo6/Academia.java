@@ -186,10 +186,12 @@ public class Academia {
 
 	public Boolean AgregoAlumnoAlCurso(Integer codigoCurso, String Legajo) {
 		Boolean sePuedoInscribir=false;
+		
 		Curso curso = buscarCursoPorCodigo(codigoCurso);
 		Alumno alumno = buscarAlumnoPorLegajo(Legajo);
 		curso.agregaUnALumno(alumno);
 		if(curso.mostrarALumno().equals(alumno)) {
+			alumno.agregarUnCurso(Legajo);
 			return sePuedoInscribir=true;
 		}
 		
@@ -314,7 +316,38 @@ public Integer modificarVigenciaDelCurso(Integer codigoCurso, Integer nuevaVigen
 	}
 		return null;
 	}
+
+
+
+
+public Integer saberCantidadDeCursosInscriptos(String legajoUno) {
+	
+	for(Alumno alumno:alumnos) {
+		if(alumno.getCantidadDeCursosInscripto() != null) {
+			return alumno.getCantidadDeCursosInscripto();
+		}
+	}
+	
+	return null;
 }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

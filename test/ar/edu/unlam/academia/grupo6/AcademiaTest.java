@@ -743,7 +743,7 @@ public class AcademiaTest {
 	
 	@Test
 
-	public void queSePuedaHacerUnDescuentoAUnAlumno () {
+	public void queSePuedaSaberACuantosCursosSeInscribioElAlumno () {
 		
 		Long dniDeuno =32432443L;
 		String nombreDeuno ="raul Ramirez";
@@ -754,6 +754,7 @@ public class AcademiaTest {
 		LocalDate fechaDelFinalizacionDeuno= LocalDate.of(2023, 02, 03);
 		String estadoDeuno="activo";
 		String legajoUno="123FF3";
+		String nombreDeLaAcademia = "Don Rip-Rip";
 		
 		Integer codigoCurso = 1;
 		String tipoDeCurso = "Curso de manejo inicial"; 
@@ -765,13 +766,41 @@ public class AcademiaTest {
 		Integer duracionCurso1 = 10;
 		Double valorCuota1 = 25000.00;
 		
-		Integer cantidadCursosInscripto = 2;
+		
+		Integer codigoCurso2 = 2;
+		String tipoDeCurso2 = "Curso de mantenimiento"; 
+		Integer duracionCurso2 = 10;
+		Double valorCuota2 = 25000.00;
+		
+		Integer valorEsperado = 3;
+		//Integer cantidadCursosInscripto = 2;
 		
 		
+		Academia DonRipRip = new Academia(nombreDeLaAcademia);	
+		Curso manejoInical = new Curso(codigoCurso, tipoDeCurso, duracionCurso, valorCuota);
+		Curso mantenimiento = new Curso(codigoCurso1, tipoDeCurso1, duracionCurso1, valorCuota1);
+		Alumno raulRamirez =new Alumno(legajoUno,dniDeuno, nombreDeuno, celularDeuno, emailDeuno, direccionDeuno,fechaDelInscripcionDeuno,fechaDelFinalizacionDeuno,estadoDeuno);
+
+		Boolean sePudo = DonRipRip.IngrasarCursoEnLaAcademia(manejoInical);
+		Boolean sePudo1 = DonRipRip.IngrasarCursoEnLaAcademia(mantenimiento);
+
+		Boolean sePudoIngresar=DonRipRip.ingresarAlumnoALaAcademia(raulRamirez);
 		
-		
+		Boolean sePudoIngresarElAlumnoAlCursoInicial= DonRipRip.AgregoAlumnoAlCurso(codigoCurso,legajoUno);
+		Boolean sePudoIngresarElAlumnoAlCursoMantenimiento= DonRipRip.AgregoAlumnoAlCurso(codigoCurso1,legajoUno);
+		Boolean sePudoIngresarElAlumnoAlCursoMantenimiento1= DonRipRip.AgregoAlumnoAlCurso(codigoCurso2,legajoUno);
+
+		Integer cantidadDeCursos = DonRipRip.saberCantidadDeCursosInscriptos(legajoUno);
+		System.out.println(valorEsperado);
+		System.out.println(cantidadDeCursos);
+	
+		assertEquals(valorEsperado, cantidadDeCursos);
 	}
+	
+	
+
+}
 
 	
 	
-}
+

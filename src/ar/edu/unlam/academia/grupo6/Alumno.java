@@ -11,17 +11,17 @@ public class Alumno extends Persona{
 	private LocalDate fechaDelFinalizacion;
 	private String estado;
 	private Integer asistencia;
-	
+	private Integer cantidadDeCursosInscripto;
 
 
 
-	//cinstructor
+	//constructor
 	public Alumno(String legajo, Long dni, String nombre, Long celular, String email, String direccion, 
 	LocalDate fechaDelInscripcion, LocalDate fechaDelFinalizacion, String estado) {
 	super(legajo,dni, nombre,celular, email, direccion);
 	this.fechaDelFinalizacion=fechaDelFinalizacion;
 	this.fechaDelInscripcion=fechaDelInscripcion;
-	
+	this.cantidadDeCursosInscripto = 0;
 	this.estado=estado;
 	
 		
@@ -76,6 +76,24 @@ public Integer getAsistencia() {
 
 	public void setAsistencia(Integer asistencia) {
 		this.asistencia = asistencia;
+	}
+
+
+	public Integer getCantidadDeCursosInscripto() {
+		return cantidadDeCursosInscripto;
+	}
+
+
+	public void setCantidadDeCursosInscripto(Integer cantidadDeCursosInscripto) {
+		this.cantidadDeCursosInscripto = cantidadDeCursosInscripto;
+	}
+
+
+	public void agregarUnCurso(String legajo) {
+		if(this.getLegajo().equals(legajo)) {
+			this.cantidadDeCursosInscripto +=1 ;
+		}
+		
 	}
 
 }
