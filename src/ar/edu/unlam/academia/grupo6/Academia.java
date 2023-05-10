@@ -276,6 +276,7 @@ public class Academia {
 
 
 
+
 	public Boolean CambioLaFechaDeInscripcionDelAlumno(String legajo, LocalDate nuevaFechaDeInscripcion) {
 		Boolean sePuedoAgregar=false;
 		for(Alumno alumno:alumnos) {
@@ -289,9 +290,19 @@ public class Academia {
 			}
 		
 		return sePuedoAgregar;
+}
+	
+
+public Integer modificarVigenciaDelCurso(Integer codigoCurso, Integer nuevaVigencia) {
+	for(Curso curso :cursos) {
+		if(curso.getCodigoCurso().equals(codigoCurso)) {
+			curso.setVigenciaCurso(nuevaVigencia);
+			return curso.getVigenciaCurso();
+			 
+		}
 	}
-
-
+		return null;
+	}
 }
 
 
