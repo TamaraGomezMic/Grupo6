@@ -1,5 +1,6 @@
 package ar.edu.unlam.academia.grupo6;
 
+import java.time.LocalDate;
 import java.util.HashSet;
 
 //ATRIBUTO 
@@ -271,6 +272,7 @@ public class Academia {
 
 
 
+
 	public Curso CambiarElValorDeLaCuotaDelCurso(Integer codigoCurso, Double nuevoValorCuota) {
 		for(Curso curso:cursos) {
 			if(curso.getCodigoCurso().equals(codigoCurso)) {
@@ -282,6 +284,36 @@ public class Academia {
 	}
 
 
+
+
+
+
+	public Boolean CambioLaFechaDeInscripcionDelAlumno(String legajo, LocalDate nuevaFechaDeInscripcion) {
+		Boolean sePuedoAgregar=false;
+		for(Alumno alumno:alumnos) {
+			if(alumno.getLegajo().equals(legajo)) {
+				
+					alumno.setFechaDelInscripcion(nuevaFechaDeInscripcion);
+					sePuedoAgregar=true;
+				
+				}
+				
+			}
+		
+		return sePuedoAgregar;
+}
+	
+
+public Integer modificarVigenciaDelCurso(Integer codigoCurso, Integer nuevaVigencia) {
+	for(Curso curso :cursos) {
+		if(curso.getCodigoCurso().equals(codigoCurso)) {
+			curso.setVigenciaCurso(nuevaVigencia);
+			return curso.getVigenciaCurso();
+			 
+		}
+	}
+		return null;
+	}
 }
 
 

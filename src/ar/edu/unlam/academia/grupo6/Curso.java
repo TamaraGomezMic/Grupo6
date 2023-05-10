@@ -8,7 +8,7 @@ public class Curso {
 	//ATRIBUTOS
 	private Integer codigoCurso;
 	private String tipoDeCurso;
-	private final Integer VIGENCIA_DEL_CURSO = 31;
+	private Integer vigenciaCurso;
 	private Integer duracionCurso;
 	private Double valorCuota;
 	private final Double VALOR_CLASE_EXTRA=1000.0;
@@ -22,11 +22,11 @@ public class Curso {
 	//CONSTRUCTORES
 	public Curso(Integer codigoCurso, String tipoDeCurso, Integer duracionCurso,
 			Double valorCuota) {
-		
 		this.codigoCurso = codigoCurso;
 		this.duracionCurso = duracionCurso;
 		this.tipoDeCurso = tipoDeCurso;
 		this.valorCuota = valorCuota;
+		this.vigenciaCurso=31;
 		
 	
 	}
@@ -50,10 +50,6 @@ public class Curso {
 		this.tipoDeCurso = tipoDeCurso;
 	}
 
-	public Integer getVigenciaCurso() {
-		return VIGENCIA_DEL_CURSO;
-	}
-
 	public Integer getDuracionCurso() {
 		return duracionCurso;
 	}
@@ -71,9 +67,7 @@ public class Curso {
 	}
 	
 
-	public Integer getVIGENCIA_DEL_CURSO() {
-		return VIGENCIA_DEL_CURSO;
-	}
+
 
 	public Double getVALOR_CLASE_EXTRA() {
 		return VALOR_CLASE_EXTRA;
@@ -93,6 +87,7 @@ public class Curso {
 	}
 	
 	
+
 
 	public Integer queSePuedaAgregarUnaClaseExtraAlCurso(Integer cantidadDeClasesExtra) {
 		Integer respuesta;    
@@ -147,6 +142,16 @@ public class Curso {
 
 	public Instructor mostrarInstructor() {
 		return instructor;
+	}
+
+
+	public Integer getVigenciaCurso() {
+		return vigenciaCurso;
+	}
+
+
+	public void setVigenciaCurso(Integer vigenciaCurso) {
+		this.vigenciaCurso = vigenciaCurso;
 	}
 
 	
