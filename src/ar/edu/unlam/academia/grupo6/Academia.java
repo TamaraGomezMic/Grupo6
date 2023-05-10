@@ -269,6 +269,19 @@ public class Academia {
 	}
 
 
+
+
+	public Curso CambiarElValorDeLaCuotaDelCurso(Integer codigoCurso, Double nuevoValorCuota) {
+		for(Curso curso:cursos) {
+			if(curso.getCodigoCurso().equals(codigoCurso)) {
+				curso.setValorCuota(nuevoValorCuota);
+				return curso;
+			}
+		}
+		return null;
+	}
+
+
 }
 
 

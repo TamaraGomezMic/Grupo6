@@ -140,18 +140,40 @@ public class AcademiaTest {
 		
 	}
 
+	
+	
+	
+	
+	@Test
+	public void queSePuedaCambiarElValorDeLaCuotaDelCurso() {
+		//PREPARACION 
+		Integer codigoCurso = 1;
+		String tipoDeCurso = "Curso de manejo inicial"; 
+		//duracion en clases
+		Integer duracionCurso = 10;
+		Double valorCuota = 25000.00;
+		String nombreDeLaAcademia = "Don Rip-Rip";
+		Double nuevoValorCuota = 30000.00;
+				
+		//ACCION
+		Curso manejoInical = new Curso(codigoCurso, tipoDeCurso, duracionCurso, valorCuota);
+		Academia DonRipRip = new Academia(nombreDeLaAcademia);
+		Boolean sePudo = DonRipRip.IngrasarCursoEnLaAcademia(manejoInical);
+		Curso seCambioElValorDeLaCuotaDelCurso=DonRipRip.CambiarElValorDeLaCuotaDelCurso(codigoCurso, nuevoValorCuota);
+		System.err.println(seCambioElValorDeLaCuotaDelCurso.getValorCuota());
+		
+		//VALIDACION
+		assertTrue(sePudo);
+		assertEquals(nuevoValorCuota, seCambioElValorDeLaCuotaDelCurso.getValorCuota());
+						
+	}
+	
+	
+	//assertEquals (sueldoEsperado, seAumentoElSueldo.getSueldo());
+	
+	
+	
 	//QueSePuedaVerificarLaVigenciaDeUnCursoParaUnAlumno
-	//QueSePuedaAsignarUnInstructorYUnAlumnoAUnCurso
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	
@@ -336,7 +358,7 @@ public class AcademiaTest {
 
 	
 	
-	
+		
 		public void queSePuedaBuscarUnInstructoPorNombreYDni() {
 		//PREPARACION 
 		Long dni =37246801L;
@@ -656,9 +678,36 @@ public class AcademiaTest {
 	}
 
 	
-	
+	@Test
 
-
+	public void queSePuedaHacerUnDescuentoAUnAlumno () {
+		
+		Long dniDeuno =32432443L;
+		String nombreDeuno ="raul Ramirez";
+		Long celularDeuno = 113456556L;
+		String emailDeuno="ragaremadelamano@alumno.edu.ar";
+		String direccionDeuno ="calluehu 244 ";
+		LocalDate fechaDelInscripcionDeuno= LocalDate.of(2023, 01, 03);
+		LocalDate fechaDelFinalizacionDeuno= LocalDate.of(2023, 02, 03);
+		String estadoDeuno="activo";
+		String legajoUno="123FF3";
+		
+		Integer codigoCurso = 1;
+		String tipoDeCurso = "Curso de manejo inicial"; 
+		Integer duracionCurso = 10;
+		Double valorCuota = 25000.00;
+		
+		Integer codigoCurso1 = 2;
+		String tipoDeCurso1 = "Curso de mantenimiento"; 
+		Integer duracionCurso1 = 10;
+		Double valorCuota1 = 25000.00;
+		
+		Integer cantidadCursosInscripto = 2;
+		
+		
+		
+		
+	}
 
 	
 	
