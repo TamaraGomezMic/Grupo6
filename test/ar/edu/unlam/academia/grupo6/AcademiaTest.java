@@ -155,8 +155,6 @@ public class AcademiaTest {
 		Boolean sePudo = DonRipRip.IngrasarCursoEnLaAcademia(manejoInical);
 		Integer verVigecia=DonRipRip.modificarVigenciaDelCurso(codigoCurso,nuevaVigencia);
 		//VALIDACION
-		System.out.println(vigenciaEsperada);
-		System.out.println(verVigecia);
 		assertEquals(vigenciaEsperada,verVigecia);
 		
 		
