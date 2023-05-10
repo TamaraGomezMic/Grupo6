@@ -85,35 +85,7 @@ public class Academia {
 
 
 
-	public Boolean agregarUnaClaseExtraAUnCursoAUnaAcademia(Integer agregarClaseExtra,Integer codigoDelCurso) {
-		Boolean sePudo=false ;
-		for(Curso curso: cursos) {
-			if(curso.getCodigoCurso().equals(codigoDelCurso)) {
-			curso.adicionarClaseExtra(agregarClaseExtra);
-			sePudo=true;
-			
-			}
-			
-		}
-		return sePudo;
-	}
-
-
-
-
-	public Integer mostrarLaCantidadDeHorasDelCursoActualizado(Integer agregarClaseExtra, Integer codigoCurso) {
-	Integer respuesta=0;
-		for(Curso curso: cursos) {
-			if(curso.getCodigoCurso().equals(codigoCurso)) {
-			respuesta=curso.getDuracionCurso();
-					
-			}
-			
-		}
-		return respuesta;
-	}
-
-
+	
 
 
 	public Alumno buscarAlumnoPorLegajo(String legajo) {
@@ -330,8 +302,55 @@ public Integer saberCantidadDeCursosInscriptos(String legajoUno) {
 	
 	return null;
 }
+
+
+
+
+public Integer mostrarLaCantidadDeClasesDelCursoDeUnAlumnoActualizado(Integer codigoCurso, String legajo,Integer cantidadDeClasesExtra) {
+	Integer respuesta=0;
+	             for(Curso curso: cursos) {
+	    	        if(curso.getCodigoCurso().equals(codigoCurso)&&curso.mostrarALumno().getLegajo().equals(legajo)) {	                 
+				        respuesta=curso.getDuracionCurso();
+		//no se q hacer aca
+		             }
+		
+	              }
+	   
+	return respuesta;
 }
 
+public Integer mostrarLaCantidadDeClasesDelCursoActualizado( Integer codigoCurso) {
+Integer respuesta=0;
+	for(Curso curso: cursos) {
+		if(curso.getCodigoCurso().equals(codigoCurso)) {
+		respuesta=curso.getDuracionCurso();
+				
+		}
+		
+	}
+	return respuesta;
+}
+
+
+
+
+public Integer agregarUnaClaseExtraAUnCursoDeUnAlumnoAUnaAcademia( Integer codigoCurso,
+		String legajo) {
+	Integer respuesta=0;
+	for(Curso curso: cursos) {
+		if(curso.getCodigoCurso().equals(codigoCurso)&&curso.mostrarALumno().getLegajo().equals(legajo)) {
+			respuesta=curso.queSePuedaAgregarUnaClaseExtraAlCurso(curso.getClaseExtra());
+	
+			
+
+		
+		}
+	
+	}
+	return respuesta;
+}
+	
+}
 
 
 

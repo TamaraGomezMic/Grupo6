@@ -78,6 +78,7 @@ public class AcademiaTest {
 		Double valorCuota = 25000.00;
 		String nombreDeLaAcademia = "Don Rip-Rip";
 		Integer cantidadDeClasesExtra=1;
+		Integer duracionEsperada=11;
 		
 		
 		//ACCION
@@ -85,38 +86,133 @@ public class AcademiaTest {
 		Academia DonRipRip = new Academia(nombreDeLaAcademia);
 		Boolean sePudo = DonRipRip.IngrasarCursoEnLaAcademia(manejoInicial);
 		Integer agregarClaseExtra =manejoInicial.queSePuedaAgregarUnaClaseExtraAlCurso(cantidadDeClasesExtra);
-	
+	//System.out.println(agregarClaseExtra);
+	//System.out.println(duracionEsperada);
 		//VALIDACION
 		
 		assertTrue (sePudo);
 		assertNotNull (manejoInicial); 
-		assertEquals(agregarClaseExtra,cantidadDeClasesExtra);
+		assertEquals(agregarClaseExtra,duracionEsperada);
+		
 	
 	}
 	@Test
-	public void queSePuedaVerLaCantidadDeClasesTotalDeUnCursoEnLaAcademia() {
+	public void queSePuedaAgregarUnaClaseExtraAUnCursoAUnAlumnoEnLaAcademia() {
 		//PREPARACION 
+		//prueba 1 para un alumno con 6 clases extras
+				Integer codigoCurso = 1;
+				String tipoDeCurso = "Curso de manejo inicial"; 
+				Integer duracionCurso = 10;
+				Double valorCuota = 25000.00;
+				String nombreDeLaAcademia = "Don Rip-Rip";
+				Integer cantidadDeClasesExtra=6;
+				Integer cantidadDeClasesTotalesEsperadas=16;
+				
+				Long dni =32432443L;
+				String nombre ="Menganito Ramirez";
+				Long celular = 1124356456L;
+				String email="menganoagarramedelamano@alumno.edu.ar";
+				String direccion ="calle walaby 2467 ";
+				String legajo="433FF3";
+				LocalDate fechaDelInscripcion= LocalDate.of(2023, 01, 03);
+				LocalDate fechaDelFinalizacion= LocalDate.of(2023, 02, 03);
+				String estado="activo";
+		
+				Academia DonRipRip = new Academia(nombreDeLaAcademia);
+				
+				Curso manejoInicial = new Curso(codigoCurso, tipoDeCurso, duracionCurso, valorCuota);
+				
+			    DonRipRip.IngrasarCursoEnLaAcademia(manejoInicial);
+				
+			    Integer agregarClaseExtra =manejoInicial.queSePuedaAgregarUnaClaseExtraAlCurso(cantidadDeClasesExtra);
+				
+			    Alumno nuevoAlumno =new Alumno(legajo,dni, nombre, celular, email, direccion,fechaDelInscripcion,fechaDelFinalizacion,estado);
+			    
+			    DonRipRip.ingresarAlumnoALaAcademia(nuevoAlumno);
+				DonRipRip.AgregoAlumnoAlCurso(codigoCurso,legajo);
+				 
+			    
+			    //evaluo que se pueda ingresar las clases extra al al curso de la academia 
+			    Integer agregarClaseExtraAlCurso=DonRipRip.agregarUnaClaseExtraAUnCursoDeUnAlumnoAUnaAcademia(codigoCurso,legajo);
+			    //VALIDACION
+
+			    assertEquals(cantidadDeClasesTotalesEsperadas,agregarClaseExtraAlCurso);
+		
+	
+	}
+	
+	@Test
+	public void queSePuedaVerLaCantidadDeClasesTotalesDeUnCursoParaUnAlumnoEnLaAcademia() {
+		//PREPARACION 
+//prueba 1 para un alumno con 6 clases extras
 		Integer codigoCurso = 1;
 		String tipoDeCurso = "Curso de manejo inicial"; 
 		Integer duracionCurso = 10;
 		Double valorCuota = 25000.00;
 		String nombreDeLaAcademia = "Don Rip-Rip";
-		Integer cantidadDeClasesExtra=4;
-		Integer cantidadDeClasesTotalesEsperadas=14;
+		Integer cantidadDeClasesExtra=6;
+		Integer cantidadDeClasesTotalesEsperadas=16;
 		
-		//ACCION
+		Long dni =32432443L;
+		String nombre ="Menganito Ramirez";
+		Long celular = 1124356456L;
+		String email="menganoagarramedelamano@alumno.edu.ar";
+		String direccion ="calle walaby 2467 ";
+		String legajo="433FF3";
+		LocalDate fechaDelInscripcion= LocalDate.of(2023, 01, 03);
+		LocalDate fechaDelFinalizacion= LocalDate.of(2023, 02, 03);
+		String estado="activo";
+		
+
+		//ACCION de menganito
+	    Academia DonRipRip = new Academia(nombreDeLaAcademia);
 		Curso manejoInicial = new Curso(codigoCurso, tipoDeCurso, duracionCurso, valorCuota);
-		Academia DonRipRip = new Academia(nombreDeLaAcademia);
-		Boolean sePudo = DonRipRip.IngrasarCursoEnLaAcademia(manejoInicial);
+		DonRipRip.IngrasarCursoEnLaAcademia(manejoInicial);
 		Integer agregarClaseExtra =manejoInicial.queSePuedaAgregarUnaClaseExtraAlCurso(cantidadDeClasesExtra);
+		Alumno nuevoAlumno =new Alumno(legajo,dni, nombre, celular, email, direccion,fechaDelInscripcion,fechaDelFinalizacion,estado);
+	    DonRipRip.ingresarAlumnoALaAcademia(nuevoAlumno);
+		DonRipRip.AgregoAlumnoAlCurso(codigoCurso,legajo);
+		DonRipRip.agregarUnaClaseExtraAUnCursoDeUnAlumnoAUnaAcademia(codigoCurso,legajo);
+		Integer cantidadDeClasesTotalesDeUnAlumno=DonRipRip.mostrarLaCantidadDeClasesDelCursoDeUnAlumnoActualizado(codigoCurso,legajo,cantidadDeClasesExtra);
+	   	System.out.println(cantidadDeClasesTotalesEsperadas);
+		System.out.println(cantidadDeClasesTotalesDeUnAlumno);
 		
-		//evaluo que se pueda ingresar las clases extra al al curso de la academia 
-		Boolean agregarClaseExtraAlCurso=DonRipRip.agregarUnaClaseExtraAUnCursoAUnaAcademia(agregarClaseExtra,codigoCurso);
-		Integer cantidadDeClasesTotales=DonRipRip.mostrarLaCantidadDeHorasDelCursoActualizado(agregarClaseExtra,codigoCurso);
+		
+//prueba 1 para un alumno con 2 clases extras
+		Integer codigoCurso1 = 1;
+		String tipoDeCurso1 = "Curso de manejo inicial"; 
+		Integer duracionCurso1 = 10;
+		Double valorCuota1 = 25000.00;
+		Integer cantidadDeClasesExtra1=2;
+		Integer cantidadDeClasesTotalesEsperadas1=12;
+		Long dni1 =32432443L;
+		String nombre1 ="Menganita Ramirez";
+		Long celular1 = 1124356456L;
+		String email1="menganaagarramedelamana@alumno.edu.ar";
+		String direccion1 ="calle walaby 2467 ";
+		String legajo1="434FF3";
+		LocalDate fechaDelInscripcion1= LocalDate.of(2023, 01, 03);
+		LocalDate fechaDelFinalizacion1= LocalDate.of(2023, 02, 03);
+		String estado1="activo";
+		//AACION DE MENGANITA
+		Curso manejoInicial1 = new Curso(codigoCurso1, tipoDeCurso1, duracionCurso1, valorCuota1);
+	    DonRipRip.IngrasarCursoEnLaAcademia(manejoInicial1);
+		Integer agregarClaseExtra1 =manejoInicial1.queSePuedaAgregarUnaClaseExtraAlCurso(cantidadDeClasesExtra1);
+		Alumno nuevoAlumno1 =new Alumno(legajo1,dni1, nombre1, celular1, email1, direccion1,fechaDelInscripcion1,fechaDelFinalizacion1,estado1);
+	    DonRipRip.ingresarAlumnoALaAcademia(nuevoAlumno1);
+		//DonRipRip.agregarUnaClaseExtraAUnCursoAUnaAcademia(agregarClaseExtra1,codigoCurso1);
+		DonRipRip.AgregoAlumnoAlCurso(codigoCurso1,legajo1);
+		Integer cantidadDeClasesTotalesDeUnAlumnoMenganita=DonRipRip.mostrarLaCantidadDeClasesDelCursoDeUnAlumnoActualizado(codigoCurso1,legajo1,cantidadDeClasesExtra1);
+		System.out.println(cantidadDeClasesTotalesEsperadas1);
+		System.out.println(cantidadDeClasesTotalesDeUnAlumnoMenganita);
+			   
+		
 		//VALIDACION
+		assertEquals(cantidadDeClasesTotalesEsperadas1,cantidadDeClasesTotalesDeUnAlumnoMenganita);
+		assertEquals(cantidadDeClasesTotalesEsperadas,cantidadDeClasesTotalesDeUnAlumno);
+
 		
-		assertTrue(agregarClaseExtraAlCurso);
-		assertEquals(cantidadDeClasesTotalesEsperadas,cantidadDeClasesTotales);
+		
 	
 	}
 	@Test

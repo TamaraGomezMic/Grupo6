@@ -12,7 +12,7 @@ public class Curso {
 	private Integer duracionCurso;
 	private Double valorCuota;
 	private final Double VALOR_CLASE_EXTRA=1000.0;
-	private Integer claseExtra=0;
+	private Integer claseExtra;
 	private Instructor instructor;
 	private Alumno alumno;
 	private HashSet<Alumno>alumnos;	
@@ -27,6 +27,7 @@ public class Curso {
 		this.tipoDeCurso = tipoDeCurso;
 		this.valorCuota = valorCuota;
 		this.vigenciaCurso=31;
+		this.claseExtra=0;
 		
 	
 	}
@@ -90,11 +91,11 @@ public class Curso {
 
 
 	public Integer queSePuedaAgregarUnaClaseExtraAlCurso(Integer cantidadDeClasesExtra) {
-		Integer respuesta;    
-		 	    
-		    this.setClaseExtra(cantidadDeClasesExtra);
-		    respuesta=this.getClaseExtra();
-		  // System.out.println(this.getClaseExtra());
+		Integer respuesta;
+		
+		   this.adicionarClaseExtra(cantidadDeClasesExtra);
+		    respuesta=this.getDuracionCurso();
+		
 		    
 		 
 		return respuesta;
@@ -102,8 +103,8 @@ public class Curso {
 	}
 	public void adicionarClaseExtra(Integer agregarClaseExtra) {
 
-		Integer totalHoras=this.getDuracionCurso()+agregarClaseExtra;
-         this.setDuracionCurso(totalHoras);	
+		Integer totalClases=this.getDuracionCurso()+agregarClaseExtra;
+         this.setDuracionCurso(totalClases);	
 
 		
 	}
