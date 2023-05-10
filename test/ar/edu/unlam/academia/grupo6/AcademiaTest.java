@@ -791,8 +791,8 @@ public class AcademiaTest {
 		Boolean sePudoIngresarElAlumnoAlCursoMantenimiento1= DonRipRip.AgregoAlumnoAlCurso(codigoCurso2,legajoUno);
 
 		Integer cantidadDeCursos = DonRipRip.saberCantidadDeCursosInscriptos(legajoUno);
-		System.out.println(valorEsperado);
-		System.out.println(cantidadDeCursos);
+		//System.out.println(valorEsperado);
+		//System.out.println(cantidadDeCursos);
 	
 		assertEquals(valorEsperado, cantidadDeCursos);
 	}
