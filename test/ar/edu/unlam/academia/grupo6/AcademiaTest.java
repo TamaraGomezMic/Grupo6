@@ -94,7 +94,7 @@ public class AcademiaTest {
 	
 	}
 	@Test
-	public void queSePuedanAgregarClasesExtraAUnCursoEnLaAcademia() {
+	public void queSePuedaVerLaCantidadDeClasesTotalDeUnCursoEnLaAcademia() {
 		//PREPARACION 
 		Integer codigoCurso = 1;
 		String tipoDeCurso = "Curso de manejo inicial"; 
@@ -160,10 +160,6 @@ public class AcademiaTest {
 		
 	}
 
-	
-	
-	
-	
 
 	@Test
 	public void queSePuedaCambiarElValorDeLaCuotaDelCurso() {
@@ -188,18 +184,6 @@ public class AcademiaTest {
 		assertEquals(nuevoValorCuota, seCambioElValorDeLaCuotaDelCurso.getValorCuota());
 						
 	}
-	
-	
-	//assertEquals (sueldoEsperado, seAumentoElSueldo.getSueldo());
-	
-	
-	
-	//QueSePuedaVerificarLaVigenciaDeUnCursoParaUnAlumno
-
-	
-	
-	
-	
 	
 	
 	// INSTRUCTOR ++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -382,7 +366,7 @@ public class AcademiaTest {
 	
 
 		@Test
-		public void queSePuedaBuscarUnInstructoPorNombreYDni() {
+	public void queSePuedaBuscarUnInstructoPorNombreYDni() {
 		//PREPARACION 
 		Long dni =37246801L;
 		Integer codigo=1;
@@ -614,12 +598,7 @@ public class AcademiaTest {
 		assertTrue(seModifico);
 
 	}
-	//queSePuedaObtenerLaCantidadDeAlumnosInscriptosEnLaAcademia
-	
-	
-	
-	
-	
+
 	
 
 	@Test

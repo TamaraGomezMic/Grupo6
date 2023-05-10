@@ -107,12 +107,13 @@ public class Curso {
 
 		
 	}
-	
+	//este es como un set
 	public void agregaUnALumno(Alumno nuevoAlumno) {
 		this.alumno= nuevoAlumno;
 	//this.alumnos.add(nuevoAlumno);
 	
 }
+	//este es como un get del set de arriba
 	public Alumno mostrarALumno() {
 		return alumno;
 	}
