@@ -1,5 +1,6 @@
 package ar.edu.unlam.academia.grupo6;
 
+import java.time.LocalDate;
 import java.util.HashSet;
 
 //ATRIBUTO 
@@ -266,6 +267,28 @@ public class Academia {
 		}
 		return null;
 
+	}
+
+
+
+
+
+
+
+
+	public Boolean CambioLaFechaDeInscripcionDelAlumno(String legajo, LocalDate nuevaFechaDeInscripcion) {
+		Boolean sePuedoAgregar=false;
+		for(Alumno alumno:alumnos) {
+			if(alumno.getLegajo().equals(legajo)) {
+				
+					alumno.setFechaDelInscripcion(nuevaFechaDeInscripcion);
+					sePuedoAgregar=true;
+				
+				}
+				
+			}
+		
+		return sePuedoAgregar;
 	}
 
 

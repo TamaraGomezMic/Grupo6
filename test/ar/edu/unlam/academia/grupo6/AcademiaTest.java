@@ -267,7 +267,7 @@ public class AcademiaTest {
 		Boolean sePudo = DonRipRip.registrarInstructorEnAcademia(nuevoInstructor);
 		Boolean seIngreso = DonRipRip.IngrasarCursoEnLaAcademia(manejoInicial);
 		Boolean SePudoAgregar = DonRipRip.AgregoInstructorAlCurso(codigoCurso, legajo);
-		System.out.println(manejoInicial.mostrarInstructor().getNombre());
+		
 		//VALIDACION
 		assertTrue (SePudoAgregar);
 	}
@@ -336,7 +336,7 @@ public class AcademiaTest {
 
 	
 	
-	
+		@Test
 		public void queSePuedaBuscarUnInstructoPorNombreYDni() {
 		//PREPARACION 
 		Long dni =37246801L;
@@ -528,7 +528,47 @@ public class AcademiaTest {
 	}
 	
 
+	@Test
+	public void queSePuedaCambiarLaFechaDeInscripcionDelAlumnoEnElCurso() {
+		
+//PREPARACION 
+		Long dni =32432443L;
+		String nombre ="Menganito Ramirez";
+		Long celular = 1124356456L;
+		String email="menganoagarramedelamano@alumno.edu.ar";
+		String direccion ="calle walaby 2467 ";
+		String legajo="433FF3";
+//un mes debe durar como minimo
+		LocalDate fechaDelInscripcion= LocalDate.of(2023, 01, 03);
+		LocalDate fechaDelFinalizacion= LocalDate.of(2023, 02, 03);
+		String estado="activo";
+		LocalDate nuevaFechaDeInscripcion= LocalDate.of(2023, 02, 01); 
+		
+		String nombreDeLaAcademia = "Don Rip-Rip";
+		
+		Integer codigoCurso = 1;
+		String tipoDeCurso = "Curso de manejo inicial"; 
+		//duracion en clases
+		Integer duracionCurso = 10;
+		Double valorCuota = 25000.00;
 	
+	
+	
+//ACCION		
+		Alumno nuevoAlumno =new Alumno(legajo,dni, nombre, celular, email, direccion,fechaDelInscripcion,fechaDelFinalizacion,estado);
+		Academia DonRipRip = new Academia(nombreDeLaAcademia);	
+		Curso manejoInical = new Curso(codigoCurso, tipoDeCurso, duracionCurso, valorCuota);
+		Boolean sePudo = DonRipRip.IngrasarCursoEnLaAcademia(manejoInical);
+		Boolean sePudoIngresar=DonRipRip.ingresarAlumnoALaAcademia(nuevoAlumno);
+		Boolean sePudoIngresarElAlumnoAlCurso= DonRipRip.AgregoAlumnoAlCurso(codigoCurso,legajo);
+		
+		Boolean seModifico = DonRipRip.CambioLaFechaDeInscripcionDelAlumno(legajo,nuevaFechaDeInscripcion);
+		
+		
+//VALIDACION
+		assertTrue(seModifico);
+
+	}
 	//queSePuedaObtenerLaCantidadDeAlumnosInscriptosEnLaAcademia
 	
 	
