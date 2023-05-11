@@ -3,6 +3,8 @@ package ar.edu.unlam.academia.grupo6;
 public class ClaseExtra {
 private Integer clasesExtra;
 private Integer codigoCurso;
+
+
 public ClaseExtra(Integer codigoCurso, Integer clasesExtra) {
 	this.clasesExtra = clasesExtra;
 	this.codigoCurso = codigoCurso;

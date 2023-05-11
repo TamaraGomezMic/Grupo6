@@ -108,7 +108,8 @@ public class Alumno extends Persona {
 
 				// AGREGE UNA CLASE EXTRA DE UN CURSO DETERMINADO AL ARRAY DE CLASES EXTRAS DEL
 				// ALUMNO
-				this.clasesExtras.add(new ClaseExtra(codigoCurso, cantidadDeClasesExtra));
+				ClaseExtra nuevaClaseExtra = new ClaseExtra(codigoCurso, cantidadDeClasesExtra);
+				this.clasesExtras.add(nuevaClaseExtra);
 
 				respuesta = this.cuantasClasesTiene(codigoCurso);
 

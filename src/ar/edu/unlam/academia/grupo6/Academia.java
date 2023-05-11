@@ -123,7 +123,7 @@ public class Academia {
 		if (curso.mostrarALumno().equals(alumno)) {
 			alumno.agregarUnCurso(Legajo);
 			return sePuedoInscribir = true;
-		}
+		} 
 
 		return null;
 	}
