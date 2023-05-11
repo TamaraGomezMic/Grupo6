@@ -12,7 +12,6 @@ public class Curso {
 	private Integer duracionCurso;
 	private Double valorCuota;
 	private final Double VALOR_CLASE_EXTRA=1000.0;
-	private Integer claseExtra;
 	private Instructor instructor;
 	private Alumno alumno;
 	private HashSet<Alumno>alumnos;	
@@ -27,7 +26,7 @@ public class Curso {
 		this.tipoDeCurso = tipoDeCurso;
 		this.valorCuota = valorCuota;
 		this.vigenciaCurso=31;
-		this.claseExtra=0;
+
 		
 	
 	}
@@ -52,7 +51,7 @@ public class Curso {
 	}
 
 	public Integer getDuracionCurso() {
-		return duracionCurso;
+		return this.duracionCurso;
 	}
 
 	public void setDuracionCurso(Integer duracionCurso) {
@@ -78,36 +77,44 @@ public class Curso {
 
 	
 //ver q pasa si las clases ya empiezan con clase extra cero==>
-	public Integer getClaseExtra() {
-		return claseExtra;
-		//puse el cero arriba en el atributo 
-	}
 
-	public void setClaseExtra(Integer cantidadDeClasesExtra) {
-		this.claseExtra = cantidadDeClasesExtra;
-	}
 	
 	
+//_--------------------------------------------
 
-
-	public Integer queSePuedaAgregarUnaClaseExtraAlCurso(Integer cantidadDeClasesExtra) {
+	/*public Integer queSePuedaAgregarUnaClaseExtraAlCurso(Integer cantidadDeClasesExtra) {
 		Integer respuesta;
 		
 		   this.adicionarClaseExtra(cantidadDeClasesExtra);
-		    respuesta=this.getDuracionCurso();
+		    respuesta=this.mostrasAdicion();
 		
 		    
 		 
 		return respuesta;
 
 	}
+	*/
+//----------------------------------------------------	
 	public void adicionarClaseExtra(Integer agregarClaseExtra) {
 
 		Integer totalClases=this.getDuracionCurso()+agregarClaseExtra;
-         this.setDuracionCurso(totalClases);	
+         this.agregarClaseExtra(totalClases);	//no uso set porqe modifico todo el codigo
 
 		
 	}
+	
+//-----------------------------	
+   private void agregarClaseExtra(Integer totalClases) {
+		this.duracionCurso=totalClases;
+	}
+
+  private Integer mostrasAdicion() {
+		return this.duracionCurso;
+	}
+//------------------------
+  
+  //--------------------------------------------
+  
 	//este es como un set
 	public void agregaUnALumno(Alumno nuevoAlumno) {
 		this.alumno= nuevoAlumno;
@@ -115,9 +122,16 @@ public class Curso {
 	
 }
 	//este es como un get del set de arriba
+	/*public Alumno mostrarALumno() {
+		return alumno;
+	}*/
 	public Alumno mostrarALumno() {
+	
 		return alumno;
 	}
+	
+//----------------------------------------	
+	
 
 	@Override
 	public int hashCode() {

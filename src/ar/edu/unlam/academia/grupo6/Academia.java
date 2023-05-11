@@ -161,7 +161,13 @@ public class Academia {
 		
 		Curso curso = buscarCursoPorCodigo(codigoCurso);
 		Alumno alumno = buscarAlumnoPorLegajo(Legajo);
+		
+		
 		curso.agregaUnALumno(alumno);
+		alumno.agregarUnCursoAlumno(curso);
+		
+		
+		
 		if(curso.mostrarALumno().equals(alumno)) {
 			alumno.agregarUnCurso(Legajo);
 			return sePuedoInscribir=true;
@@ -334,21 +340,7 @@ Integer respuesta=0;
 
 
 
-public Integer agregarUnaClaseExtraAUnCursoDeUnAlumnoAUnaAcademia( Integer codigoCurso,
-		String legajo) {
-	Integer respuesta=0;
-	for(Curso curso: cursos) {
-		if(curso.getCodigoCurso().equals(codigoCurso)&&curso.mostrarALumno().getLegajo().equals(legajo)) {
-			respuesta=curso.queSePuedaAgregarUnaClaseExtraAlCurso(curso.getClaseExtra());
-	
-			
 
-		
-		}
-	
-	}
-	return respuesta;
-}
 
 
 
