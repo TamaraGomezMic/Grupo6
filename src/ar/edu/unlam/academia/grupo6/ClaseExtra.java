@@ -7,6 +7,7 @@ public ClaseExtra(Integer codigoCurso, Integer clasesExtra) {
 	this.clasesExtra = clasesExtra;
 	this.codigoCurso = codigoCurso;
 }
+
 public Integer getClasesExtra() {
 	return clasesExtra;
 }
