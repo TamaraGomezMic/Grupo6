@@ -271,4 +271,17 @@ public class Academia {
 		return sePudoModificar;
 	}
 
+	public Boolean saberSiElAlumnoEstaEnCondicionDeGitfCard(String legajo) {
+		Boolean tieneGift = false;
+		for (Alumno alumno : alumnos) {
+			if (alumno.getLegajo().equals(legajo) && alumno.getCantidadDeCursosInscripto()>=3) {
+				tieneGift= true;
+				alumno.setGiftCard(tieneGift);
+				return alumno.getGiftCard();
+								
+			}
+		}
+		return null;
+	}
+
 }

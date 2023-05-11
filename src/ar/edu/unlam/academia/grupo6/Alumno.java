@@ -12,6 +12,7 @@ public class Alumno extends Persona {
 	private String estado;
 	private Integer asistencia;
 	private Integer cantidadDeCursosInscripto;
+	private Boolean giftCard;
 //-------------------------------------------
 	private Curso curso;
 	private HashSet<Curso> cursos;
@@ -28,11 +29,13 @@ public class Alumno extends Persona {
 		this.fechaDelInscripcion = fechaDelInscripcion;
 		this.cantidadDeCursosInscripto = 0;
 		this.estado = estado;
+		this.giftCard=false;
 		cursos = new HashSet<>();
 		clasesExtras = new HashSet<>();
 		this.claseExtraSolicitadas = 0;
 	}
 
+	
 	public Alumno() {
 		super();
 
@@ -81,6 +84,15 @@ public class Alumno extends Persona {
 	public void setCantidadDeCursosInscripto(Integer cantidadDeCursosInscripto) {
 		this.cantidadDeCursosInscripto = cantidadDeCursosInscripto;
 	}
+	
+	public Boolean getGiftCard() {
+		return giftCard;
+	}
+
+	public void setGiftCard(Boolean giftCard) {
+		this.giftCard = giftCard;
+	}
+
 
 //--------------------------------------------------
 	public void agregarUnCurso(String legajo) {
