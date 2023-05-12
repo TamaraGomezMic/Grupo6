@@ -47,7 +47,9 @@ public class Academia {
 	}
 
 	public Boolean registrarInstructorEnAcademia(Instructor nuevoInstructor) {
+		
 		boolean seRegistro = instructores.add(nuevoInstructor);
+		
 		// System.out.println(instructores.size());
 		return seRegistro;
 	}
@@ -175,6 +177,17 @@ public class Academia {
 
 		return contador;
 	}
+	public Integer contarCantidadDeInstructores() {
+		Integer contador = 0;
+		for (Instructor instructor : instructores) {
+			if (instructor.getTurno() == "mañana"||instructor.getTurno() == "tarde"||instructor.getTurno() == "noche") {
+				contador++;
+
+			}
+		}
+
+		return contador;
+	}
 
 	public Instructor buscarInstructorPorDniyNombre(Long dni, String nombre) {
 		for (Instructor instructor : instructores) {
@@ -284,4 +297,5 @@ public class Academia {
 		return null;
 	}
 
+	
 }
