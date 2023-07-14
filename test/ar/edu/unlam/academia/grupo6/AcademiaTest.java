@@ -387,8 +387,7 @@ public void queSePuedaSaberCuantosInstructoresHayEnLaAcademia() {
 
 	// VALIDACION
 	assertEquals(cantidadDeInstructoresEsperados, CantidadDeInstructores);
-	System.out.println(cantidadDeInstructoresEsperados);
-	System.out.println(CantidadDeInstructores);
+
 }
 
 @Test
